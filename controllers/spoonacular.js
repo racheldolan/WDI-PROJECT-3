@@ -3,25 +3,25 @@ const { spoonKey } = require('../config/environment');
 const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes';
 
 
-function getRecipesByIngredients(req, res, next) {
-
-  rp({
-    method: 'GET',
-    url: `${spoonacular}/findByIngredients`,
-    qs: {
-      ingredients: 'eggs,milk,potatoes',
-      number: 5,
-      ranking: 2,
-      fillIngredients: true
-    },
-    headers: {
-      'X-mashape-key': spoonKey
-    },
-    json: true
-  })
-    .then(response => res.json(response))
-    .catch(next);
-}
+// function getRecipesByIngredients(req, res, next) {
+//
+//   rp({
+//     method: 'GET',
+//     url: `${spoonacular}/findByIngredients`,
+//     qs: {
+//       ingredients: 'eggs,milk,potatoes',
+//       number: 5,
+//       ranking: 2,
+//       fillIngredients: true
+//     },
+//     headers: {
+//       'X-mashape-key': spoonKey
+//     },
+//     json: true
+//   })
+//     .then(response => res.json(response))
+//     .catch(next);
+// }
 
 function getRecipeById(req, res, next) {
   rp({
@@ -32,7 +32,7 @@ function getRecipeById(req, res, next) {
     },
     headers: {
       'Accept': 'application/json',
-      'X-Mashape-Key': process.env.SPOONACULAR_API_KEY
+      'X-Mashape-Key': spoonKey
     },
     json: true
   })
@@ -40,6 +40,6 @@ function getRecipeById(req, res, next) {
     .catch(next);
 }
 module.exports={
-  getRecipesByIngredients,
+  // getRecipesByIngredients,
   getRecipeById
 };
