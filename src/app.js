@@ -1,3 +1,6 @@
 import angular from 'angular';
 
-module.angular('')
+angular.module('fridgeAPI', [])
+  .controller('MainCtrl', function($scope){
+    $scope.test = 'fridge';
+  });
