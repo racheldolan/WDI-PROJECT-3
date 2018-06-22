@@ -1,4 +1,7 @@
 # Project 3
 ## A MEAN Stack App
 
-- Linda Lê
+
+ - Linda Lê
+ - Natasha Ramburrun
+ - Rachel Dolan
