@@ -12,7 +12,7 @@
   "author": "Students",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.0",
+    "angular": "^1.7.2",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
