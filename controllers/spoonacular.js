@@ -2,7 +2,7 @@ const rp = require('request-promise');
 const { spoonKey } = require('../config/environment');
 
 
-function getRecipes(req, res, next) {
+function getRecipesByIngredients(req, res, next) {
 
   rp({
     method: 'GET',
@@ -16,5 +16,5 @@ function getRecipes(req, res, next) {
 }
 
 module.exports = {
-  getRecipes
+  getRecipesByIngredients
 };
