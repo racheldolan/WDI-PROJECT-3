@@ -2,5 +2,5 @@
 ## A MEAN Stack App
 
 
- - Natasha Ramburrun
+ - Linda Le
  - Rachel Dolan
