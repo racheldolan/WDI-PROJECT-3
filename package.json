@@ -13,10 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.0",
+<<<<<<< HEAD
     "bcrypt": "^2.0.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
     "jsonwebtoken": "^8.3.0",
+=======
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+>>>>>>> development
     "mongoose": "^5.1.6"
   },
   "devDependencies": {
