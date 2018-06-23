@@ -18,6 +18,9 @@
   </div>
 
   <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
+    <div class="navbar-start">
+      <a class="navbar-item" ui-sref="profile" ng-if="!isAuthenticated()">Profile</a>
+    </div>
     <div class="navbar-end">
       <a class="navbar-item" ui-sref="login" ng-if="!isAuthenticated()">Login</a>
       <a class="navbar-item" ui-sref="register" ng-if="!isAuthenticated()">Register</a>
@@ -38,9 +41,7 @@
           </div>
         </div>
       </div>
-
-  <h1>WDI32 Group Project</h1>
-
+      
   <ui-view></ui-view>
 
 </body>
