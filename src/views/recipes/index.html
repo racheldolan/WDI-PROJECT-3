@@ -1,7 +1,7 @@
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop">
 
-    <div class="card">
+    <div class="card" ng-repeat="recipe in recipes">
       <div class="card-image">
         <figure class="image is-4by3">
           <img src="" alt="Placeholder image">
@@ -15,8 +15,8 @@
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
+            <p class="title is-4">{{ recipe.title }}</p>
+            <p class="subtitle is-6"></p>
           </div>
         </div>
 
