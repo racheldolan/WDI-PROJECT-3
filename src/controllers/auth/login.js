@@ -3,7 +3,7 @@ function AuthLoginCtrl($scope, $auth, $state, $rootScope) {
 
   $scope.handleSubmit = function() {
     $auth.login($scope.data)
-      .then(() => $state.go('boatsIndex'))
+      .then(() => $state.go('recipesIndex'))
       .catch(() => {
         $rootScope.$broadcast('flashMessage',{
           type: 'danger',
