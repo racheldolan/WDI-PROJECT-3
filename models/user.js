@@ -4,9 +4,25 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   username: { type: String, require: true, unique: true},
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true}
+  password: { type: String, required: true},
+  image: { type: String },
+  bio: { type: String }
 // }, {
 //   id: false
+});
+
+userSchema.virtual('recepies', {
+  localField: '_id',
+  foreignField: 'owner',
+  ref: 'recepies'
+});
+
+userSchema.set('toJSON', {
+  virtuals: true,
+  transform(doc, json){
+    delete json.password;
+    return json;
+  }
 });
 
 userSchema.virtual('passwordConfirmation')

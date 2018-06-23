@@ -4,7 +4,7 @@ function RecipesShowCtrl($scope, $http){
     method: 'GET',
     url: '/api/recipes'
   })
-    .then(res => $scope.recipes = res.data);
+    .then(res => $scope.getRecipesById = res.data);
 
 }
 

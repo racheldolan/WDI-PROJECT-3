@@ -6,6 +6,29 @@
 </head>
 <body>
 
+  <nav class="navbar is-fixed-top">
+  <div class="navbar-brand">
+    <a class="navbar-item" ui-sref="home">Home</a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" ng-class="{ 'is-active': navbarOpen }" ng-click="toggleMenu()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
+    <div class="navbar-end">
+      <a class="navbar-item" ui-sref="login" ng-if="!isAuthenticated()">Login</a>
+      <a class="navbar-item" ui-sref="register" ng-if="!isAuthenticated()">Register</a>
+      <a class="navbar-item" ng-click="logout()" ng-if="isAuthenticated()">Logout</a>
+    </div>
+  </div>
+</nav>
+
+
+
+<form ng-submit="search()">
   <div class="section">
         <div class="box">
           <div class="field has-addons">
@@ -13,11 +36,12 @@
               <input class="input has-text-centered" type="search" placeholder="» » » » » » Search« « « « « «">
             </div>
               <div class="control">
-                <a class="button is-danger">Search</a>
+                <button class="button is-danger">Search</button>
               </div>
           </div>
         </div>
       </div>
+</form>
 
   <h1>WDI32 Group Project</h1>
 
