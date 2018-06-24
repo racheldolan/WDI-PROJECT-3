@@ -23,4 +23,14 @@ describe('POST /register', () => {
         done();
       });
   });
+
+  it('should return a message', done => {
+    api
+      .post('/api/register')
+      .send(userData)
+      .end((err, res) => {
+        expect(res.body.message).to.eq('Thank you for registering');
+        done();
+      });
+  });
 });
