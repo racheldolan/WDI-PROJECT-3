@@ -6,7 +6,7 @@ function Router($stateProvider, $urlRouterProvider){
       controller: 'RecipesIndexCtrl'
     })
     .state('recipesShow', {
-      url: '/recipes/:id',
+      url: '/recipes/:id/information',
       templateUrl: './views/recipes/show.html',
       controller: 'RecipesShowCtrl'
     })

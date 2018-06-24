@@ -10,28 +10,9 @@
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop" ng-repeat="recipe in recipes">
 
-<a ui-sref="recipesShow()">
-    <div class="card" >
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img ng-src="{{ recipe.image }}" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">{{ recipe.title }}</p>
-            <p class="subtitle is-6"></p>
-          </div>
-        </div>
-</a>
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-          <a href="#">#css</a> <a href="#">#responsive</a>
-          <br>
-        </div>
-      </div>
-    </div>
+    <a ui-sref="recipesShow({ recipe.id })">
+      <bulma-card image="recipe.image" title="recipe.title"></bulma-card>
+    </a>
+
   </div>
 </div>

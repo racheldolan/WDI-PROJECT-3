@@ -4,7 +4,7 @@ const spoonacular = require('../controllers/spoonacular');
 
 router.route('/recipes')
   .get(spoonacular.getRecipesByIngredients);
-router.route('/recipes/:id')
+router.route('/recipes/:id/information')
   .get(spoonacular.getRecipeById);
 
 router.post('/register', auth.register);
