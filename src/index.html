@@ -2,7 +2,7 @@
 <html ng-app="fridgeAPI">
 <head>
   <meta charset="utf-8">
-  <title>WDI32 Group Project</title>
+  <title>What's in my fridge?</title>
 </head>
 <body>
 
@@ -29,24 +29,56 @@
   </div>
 </nav>
 
+<section ng-controller="RecipesIndexCtrl">
 
-<form ng-submit="search()">
-  {{ data | ingredients }}
+  {{ ingredients | json }}
+<form ng-submit="search(ingredients)">
 
   <div class="section">
-        <div class="box">
-          <div class="field has-addons">
-            <div class="control is-expanded">
-              <input ng-model="ingredients" id="ingredients" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
-            </div>
-              <div class="control">
-                <button class="button is-danger">Search</button>
-              </div>
-          </div>
-        </div>
-      </div>
+
+    <input ng-model="ingredients" id="ingredients" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
+
+
+    <button class="button is-danger">Search</button>
+
+  </div>
 </form>
 
+
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop" ng-repeat="recipe in recipes">
+
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img ng-src="{{ recipe.image }}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">{{ recipe.title }}</p>
+            <p class="subtitle is-6"></p>
+          </div>
+        </div>
+
+        <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+          <a href="#">#css</a> <a href="#">#responsive</a>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
 
   <ui-view></ui-view>
 
