@@ -7,7 +7,7 @@ function RecipesIndexCtrl($scope, $http){
       url: '/api/recipes'
       // params: $scope.ingredients
     })
-      .then(res => $scope.recipes = res.data);
+      .then(res => console.log(res.data));
 
   };
 }
