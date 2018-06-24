@@ -4,24 +4,18 @@ const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/r
 
 
 function getRecipesByIngredients(req, res, next) {
-  const { ingredients } =  req.body;
-  rp({
-    method: 'GET',
-    url: `${spoonacular}/findByIngredients`,
-    qs: {
-      ingredients,
-      number: 5,
-      ranking: 2,
-      fillIngredients: true
-    },
-    headers: {
-      'X-mashape-key': spoonKey
-    },
-    json: true
-  })
-    .then(response => res.json(response))
-    .catch(next);
-}
+  console.log(req.body);
+
+    rp({
+      method: 'GET',
+      url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients',
+      qs: { ingredients: 'eggs,milk,potatoes' },
+      headers: { 'x-mashape-key': spoonKey },
+      json: true
+    })
+      .then(response => res.json(response))
+      .catch(next);
+  }
 
 function getRecipeById(req, res, next) {
   rp({
