@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const auth = require('../controllers/auth');
 const spoonacular = require('../controllers/spoonacular');
+const secureRoute = require('../lib/secureRoute');
 
 router.route('/recipes')
   .post(spoonacular.getRecipesByIngredients);
