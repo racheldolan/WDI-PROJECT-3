@@ -1,10 +1,12 @@
-function RecipesShowCtrl($scope, $http){
+function RecipesShowCtrl($scope, $http, $state){
 
-  $http({
-    method: 'GET',
-    url: '/api/recipes/:id'
-  })
-    .then(res => $scope.getRecipesById = res.data);
+  $scope.searchById = function(){
+
+    $http({
+      method: 'GET',
+      url: `/api/recipes/${$state.params.id}`
+    })
+      .then(res => console.log($scope.recipes = res.data.id));
+  };
 }
-
 module.exports = RecipesShowCtrl;

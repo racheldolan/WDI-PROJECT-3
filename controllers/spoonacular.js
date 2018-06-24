@@ -4,12 +4,13 @@ const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/r
 
 
 function getRecipesByIngredients(req, res, next) {
+
   console.log(req.body);
 
     rp({
       method: 'GET',
-      url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients',
-      qs: { ingredients: 'eggs,milk,potatoes' },
+      url: `${spoonacular}/findByIngredients`,
+      qs: { ingredients: 'sugar,flour' },
       headers: { 'x-mashape-key': spoonKey },
       json: true
     })
