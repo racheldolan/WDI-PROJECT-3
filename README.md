@@ -1,5 +1,5 @@
 # Project 3
-## A MEAN Stack App
+## 'What's in your fridge?' A MEAN Stack App
 
 
  - Linda Lê
