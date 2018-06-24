@@ -36,4 +36,16 @@ describe('POST /login', () => {
         done();
       });
   });
+
+  it('should return a 401 response if the user does not exist', done => {
+    const badData = { email: 'bad@bad.com', password: 'bad' };
+
+    api
+      .post('/api/login')
+      .send(badData)
+      .end((err, res) => {
+        expect(res.status).to.eq(401);
+        done();
+      });
+  });
 });
