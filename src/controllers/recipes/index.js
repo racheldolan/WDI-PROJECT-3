@@ -3,7 +3,7 @@ function RecipesIndexCtrl($scope, $http){
   // console.log($scope.ingredients);
 
   $scope.search = function(ingredients) {
-    console.log('click');
+    // console.log('click');
     $http({
       method: 'GET',
       url: '/api/recipes',
