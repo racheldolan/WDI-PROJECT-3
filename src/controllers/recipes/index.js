@@ -1,13 +1,14 @@
 function RecipesIndexCtrl($scope, $http){
-  // $scope.ingredients = {};
+  $scope.ingredients = {};
+  console.log($scope.ingredients);
 
   $scope.search = function() {
     $http({
       method: 'GET',
       url: '/api/recipes'
-      // params: $scope.ingredients
     })
-      .then(res => console.log(res.data));
+      .then(res => $scope.getRecipesByIngredients = console.log(res.data));
+
 
   };
 }
