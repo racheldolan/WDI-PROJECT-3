@@ -1,0 +1,49 @@
+<form ng-submit="handleSubmit()" name="form" novalidate>
+
+  <div class="field">
+    <label class="label" for="username">Username</label>
+    <input class="input" name="username" id="username" placeholder="Username" ng-model="data.username" required/>
+
+    <div ng-messages="form.username.$error" ng-if="form.username.$dirty">
+      <small ng-message="required">This field is required</small>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="email">Email</label>
+    <input class="input" type="email" name="email" id="email" placeholder="Email" ng-model="data.email" required pattern=".+@.+\..+" />
+
+
+    <div ng-messages="form.email.$error" ng-if="form.email.$dirty">
+      <small ng-message="required">This field is required</small>
+        <small ng-message="email">Please enter a valid email</small>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <label class="label" for="password">Password</label>
+    <input class="input" type="password" name="password" id="password" placeholder="Password" ng-model="data.password" required />
+
+  <div ng-messages="form.password.$error" ng-if="form.password.$dirty">
+    <small ng-message="required">This field is required</small>
+  </div>
+</div>
+
+
+
+  <div class="field">
+    <label class="label" for="password">Password Confirmation</label>
+    <input class="input" type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Password Confirmation" ng-model="data.passwordConfirmation" required ng-pattern="data.password"/>
+
+      <div ng-messages="form.passwordConfirmation.$error" ng-if="form.passwordConfirmation.$touched">
+        <small ng-message="required">This field is required</small>
+        <small ng-message="pattern">Passwords do not match</small>
+      </div>
+    </div>
+
+
+  </div>
+
+  <button class="button" ng-disabled="form.$invalid">Submit</button>
+</form>
