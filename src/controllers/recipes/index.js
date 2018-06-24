@@ -6,9 +6,10 @@ function RecipesIndexCtrl($scope, $http){
     console.log('click');
     $http({
       method: 'GET',
-      url: '/api/recipes'
+      url: '/api/recipes',
+      params: ingredients
     })
-      .then(res => console.log(res));
+      .then(res => console.log(res.data));
   };
 }
 
