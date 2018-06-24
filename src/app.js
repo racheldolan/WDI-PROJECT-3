@@ -17,7 +17,7 @@ import RecipesIndexCtrl from './controllers/recipes/index';
 import RecipesShowCtrl from './controllers/recipes/show';
 import UsersShowCtrl from './controllers/users/show';
 import AuthLoginCtrl from './controllers/auth/login';
-import AuthRegisterCtrl from './cotrollers/auth/register';
+import AuthRegisterCtrl from './controllers/auth/register';
 
 
 angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages'])
