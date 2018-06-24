@@ -33,4 +33,15 @@ describe('POST /register', () => {
         done();
       });
   });
+  it('should return a 422 response if the passwords do not match', done => {
+    //422 - unprocessable entity
+    const badData = Object.assign({}, userData, { password: 'bad' });
+    api
+      .post('/api/register')
+      .send(badData)
+      .end((err, res) => {
+        expect(res.status).to.eq(422);
+        done();
+      });
+  });
 });
