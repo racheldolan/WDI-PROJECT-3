@@ -4,10 +4,7 @@ function RecipesShowCtrl($scope, $http){
     method: 'GET',
     url: '/api/recipes/:id'
   })
-    .then(res => $scope.recipes = res.data);
-
+    .then(res => $scope.getRecipesById = res.data);
 }
 
-module.exports = {
-  RecipesShowCtrl
-};
+module.exports = RecipesShowCtrl;
