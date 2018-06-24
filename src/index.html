@@ -29,24 +29,21 @@
   </div>
 </nav>
 
+<section ng-controller="RecipesIndexCtrl">
 
   {{ ingredients }}
-<form ng-submit="search()">
+<form ng-submit="search(ingredients)">
 
   <div class="section">
-        <div class="box">
-          <div class="field has-addons">
-            <div class="control is-expanded">
+
               <input ng-model="ingredients" id="ingredients" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
-            </div>
-              <div class="control">
+
+
                 <button class="button is-danger">Search</button>
-              </div>
-          </div>
-        </div>
+
       </div>
 </form>
-
+</section>
 
   <ui-view></ui-view>
 
