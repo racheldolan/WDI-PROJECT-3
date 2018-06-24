@@ -5,11 +5,13 @@ const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/r
 
 function getRecipesByIngredients(req, res, next) {
 
+  const { ingredients } =  req.body;
   rp({
     method: 'GET',
     url: `${spoonacular}/findByIngredients`,
     qs: {
-      ingredients: 'eggs,milk,potatoes',
+      // ingredients: 'eggs,milk,potatoes',
+      ingredients,
       number: 5,
       ranking: 2,
       fillIngredients: true

@@ -19,5 +19,5 @@ app.use('/api', routes);
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`listening to ${port}`));
-
+// open on port 4000 if running locally
 module.exports = app;
