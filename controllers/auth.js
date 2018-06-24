@@ -4,7 +4,10 @@ const { secret } = require('../config/environment');
 
 function register(req, res, next) {
   User.create(req.body)
-    .then(user => res.status(201).json(user))
+    .then(user => {
+      const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '24h' });
+      res.json({ user, token, message: 'Thank you for registering' });
+    })
     .catch(next);
 }
 function login(req, res, next) {
@@ -28,7 +31,7 @@ function login(req, res, next) {
 }
 
 function profile (req, res, next){
-  User.populate(req.currentUser, { path: 'recepies' })
+  User.populate(req.currentUser, { path: 'recipies' })
     .then(user => res.json(user))
     .catch(next);
 }
