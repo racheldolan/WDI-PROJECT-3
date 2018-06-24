@@ -3,7 +3,7 @@ const auth = require('../controllers/auth');
 const spoonacular = require('../controllers/spoonacular');
 
 router.route('/recipes')
-  .get(spoonacular.getRecipesByIngredients);
+  .post(spoonacular.getRecipesByIngredients);
 router.route('/recipes/:id')
   .get(spoonacular.getRecipeById);
 
