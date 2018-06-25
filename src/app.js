@@ -7,6 +7,7 @@ import '@uirouter/angularjs';
 import 'bulma';
 import 'angular-messages';
 import 'satellizer';
+import 'angular-sanitize';
 
 import './scss/style.scss';
 
@@ -24,7 +25,7 @@ import AuthRegisterCtrl from './controllers/auth/register';
 import bulmaCard from './directives/bulmaCard';
 
 
-angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages'])
+angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitize'])
   .config(Router)
   .config(Auth)
   .controller('RecipesIndexCtrl', RecipesIndexCtrl)
