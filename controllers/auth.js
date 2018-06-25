@@ -9,7 +9,7 @@ function register(req, res, next) {
       // const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '24h' });
       res.json({
         user,
-        message: `Thank you for registering, ${user.username}!` });
+        message: 'Thank you for registering' });
     })
     .catch(next);
 }
