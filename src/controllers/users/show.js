@@ -1,12 +1,10 @@
-function UsersShowCtrl( $scope, $http ) {
-  $scope.data = {};
+function UsersShowCtrl( $scope, $http, $state ) {
+
   $http({
     method: 'GET',
-    url: '/api/user'
+    url: `/api/users/${$state.params.id}`
   })
-    .then(res => $scope.user = res.data);
+    .then(res => console.log($scope.user = res.data));
 }
 
-module.exports = {
-  UsersShowCtrl
-};
+module.exports = UsersShowCtrl;

@@ -19,7 +19,7 @@
 
   <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
     <div class="navbar-start">
-      <a class="navbar-item" ui-sref="profile" ng-if="!isAuthenticated()">Profile</a>
+      <a class="navbar-item" ui-sref="profile({ id: user._id })">Profile</a>
       <a class="navbar-item" ui-sref="recipesIndex">Search</a>
     </div>
     <div class="navbar-end">
