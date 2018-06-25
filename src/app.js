@@ -27,10 +27,6 @@ import AuthRegisterCtrl from './controllers/auth/register';
 // ----------Directives-------------
 import bulmaCard from './directives/bulmaCard';
 
-// ----------Directives-------------
-import bulmaCard from './directives/bulmaCard';
-
-
 angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitize'])
   .config(Router)
   .config(Auth)
