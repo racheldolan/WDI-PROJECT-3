@@ -2,7 +2,7 @@
 <html ng-app="fridgeAPI">
 <head>
   <meta charset="utf-8">
-  <title>WDI32 Group Project</title>
+  <title>What's in my fridge?</title>
 </head>
 <body>
 
@@ -20,6 +20,7 @@
   <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
     <div class="navbar-start">
       <a class="navbar-item" ui-sref="profile" ng-if="!isAuthenticated()">Profile</a>
+      <a class="navbar-item" ui-sref="recipesIndex">Search</a>
     </div>
     <div class="navbar-end">
       <a class="navbar-item" ui-sref="login" ng-if="!isAuthenticated()">Login</a>
@@ -28,8 +29,6 @@
     </div>
   </div>
 </nav>
-
   <ui-view></ui-view>
-
 </body>
 </html>

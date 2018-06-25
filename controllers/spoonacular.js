@@ -4,23 +4,26 @@ const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 
 // index route function
 function getRecipesByIngredients(req, res, next) {
-
-  console.log(req.body);
+  const userInput = req.query.ingredients;
+  console.log(typeof(userInput));
 
   rp({
     method: 'GET',
-    url: `${spoonacular}/recipes/findByIngredients`,
-    qs: { ingredients: 'eggs,milk,potatoes' },
+    url: `${spoonacular}/findByIngredients`,
+    qs: { ingredients: userInput },
     headers: { 'x-mashape-key': spoonKey },
     json: true
   })
-    .then(response => res.json(response))
+    .then(response => {
+      res.json(response);
+      console.log(response);
+    })
     .catch(next);
 }
 
 // show route function
 function getRecipeById(req, res, next) {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   rp({
     method: 'GET',
     url: `${spoonacular}/recipes/${req.params.id}/information`,

@@ -4,7 +4,7 @@ function RecipesShowCtrl($scope, $http, $state){
     method: 'GET',
     url: `/api/recipes/${$state.params.id}/information`
   })
-    .then(res => $scope.recipe = res.data);
+    .then(res => console.log($scope.recipe = res.data));
 }
 
 module.exports = RecipesShowCtrl;

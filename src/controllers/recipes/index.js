@@ -3,12 +3,12 @@ function RecipesIndexCtrl($scope, $http){
   // console.log($scope.ingredients);
   $scope.suggestions = [];
 
-  $scope.search = function() {
+  $scope.search = function(ingredients) {
     // console.log('click');
     $http({
       method: 'GET',
       url: '/api/recipes',
-      qs: $scope.ingredient
+      params: { ingredients }
     })
       .then(res => console.log($scope.recipes = res.data));
   };
