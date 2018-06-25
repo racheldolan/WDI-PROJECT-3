@@ -11,7 +11,10 @@
         <div class="media">
           <div class="media-content">
             <p class="title is-4">{{ recipe.title }}</p>
-            <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
+            <p class="subtitle is-6">Cooking time: {{ recipe.readyInMinutes}} minutes</p>
+            <p class="subtitle is-6">Serves: {{ recipe.servings}}</p>
+            <p class="subtitle is-6" ng-bind-html="recipe.diets"></p>
+
           </div>
         </div>
         <div class="content">
@@ -24,4 +27,11 @@
     </div>
 
   </div>
+
+    <div class="column is-half-desktop">
+      <div class="media-content">
+        <h1 class="title">Instructions</h1>
+        <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
+      </div>
+    </div>
 </div>
