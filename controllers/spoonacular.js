@@ -2,14 +2,20 @@ const rp = require('request-promise');
 const { spoonKey } = require('../config/environment');
 const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 
-
+// index route function
 function getRecipesByIngredients(req, res, next) {
+
   console.log(req.body);
 
   rp({
     method: 'GET',
+<<<<<<< HEAD
     url: `${spoonacular}/recipes/findByIngredients`,
     qs: { ingredients: 'eggs,milk,potatoes' },
+=======
+    url: `${spoonacular}/findByIngredients`,
+    qs: { ingredients: 'sugar,flour' },
+>>>>>>> 5fb44265993c966eedcad06647988ab57a53636d
     headers: { 'x-mashape-key': spoonKey },
     json: true
   })
@@ -17,7 +23,9 @@ function getRecipesByIngredients(req, res, next) {
     .catch(next);
 }
 
+// show route function
 function getRecipeById(req, res, next) {
+  console.log(req.params.id);
   rp({
     method: 'GET',
     url: `${spoonacular}/recipes/${req.params.id}/information`,
