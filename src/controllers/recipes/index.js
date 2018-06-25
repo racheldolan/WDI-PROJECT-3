@@ -7,10 +7,21 @@ function RecipesIndexCtrl($scope, $http){
     $http({
       method: 'GET',
       url: '/api/recipes',
-      params: ingredients
+      qs: ingredients
     })
       .then(res => console.log($scope.recipes = res.data));
   };
+
+  $scope.autoSearch = function(query) {
+    // console.log(query);
+    $http({
+      method: 'GET',
+      url: '/api/autocomplete',
+      params: { query: query }
+    })
+      .then(res => console.log($scope.autocomplete = res.data));
+  };
+
 }
 
 module.exports = RecipesIndexCtrl;

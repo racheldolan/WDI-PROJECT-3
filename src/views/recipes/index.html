@@ -1,32 +1,18 @@
+<!-- SEARCH BAR -->
+<form ng-submit="search(ingredients)">
+  <div class=section>
+    <input ng-model="ingredients" ng-change="autoSearch(ingredients)" id="ingredients" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
+    <button class="button is-danger">Search</button>
+  </div>
+</form>
+
+<!-- cards displaying recipes -->
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop" ng-repeat="recipe in recipes">
 
-    <div class="card" >
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img ng-src="{{ recipe.image }}" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src="" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">{{ recipe.title }}</p>
-            <p class="subtitle is-6"></p>
-          </div>
-        </div>
+    <a ui-sref="recipesShow({ id: recipe.id })">
+      <bulma-card image="recipe.image" title="recipe.title"></bulma-card>
+    </a>
 
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-          <a href="#">#css</a> <a href="#">#responsive</a>
-          <br>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

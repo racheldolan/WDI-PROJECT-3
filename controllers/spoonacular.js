@@ -9,8 +9,8 @@ function getRecipesByIngredients(req, res, next) {
 
   rp({
     method: 'GET',
-    url: `${spoonacular}/findByIngredients`,
-    qs: { ingredients: 'sugar,flour' },
+    url: `${spoonacular}/recipes/findByIngredients`,
+    qs: { ingredients: 'eggs,milk,potatoes' },
     headers: { 'x-mashape-key': spoonKey },
     json: true
   })

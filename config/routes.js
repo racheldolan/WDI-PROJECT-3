@@ -5,11 +5,10 @@ const secureRoute = require('../lib/secureRoute');
 
 router.route('/recipes')
   .get(spoonacular.getRecipesByIngredients);
-router.route('/recipes/:id')
+router.route('/recipes/:id/information')
   .get(spoonacular.getRecipeById);
 
-router.route('autocomplete')
-  .get(spoonacular.autocomplete.spoonacular);
+router.get('/autocomplete', spoonacular.autocomplete);
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
