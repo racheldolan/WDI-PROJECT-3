@@ -8,7 +8,7 @@ function getRecipesByIngredients(req, res, next) {
   rp({
     method: 'GET',
     url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients',
-    qs: { ingredients: 'eggs,milk,potatoes' },
+    qs: { ingredients: 'sugar,flour' },
     headers: { 'x-mashape-key': spoonKey },
     json: true
   })

@@ -30,6 +30,15 @@ describe('GET /users/:id', () => {
         done();
       });
   });
+
+  it('should return the correct data', done => {
+    api.get(`/api/users/${userId}`)
+      .end((err, res) =>{
+        expect(res.body.username).to.eq(userData.username);
+        expect(res.body.email).to.eq(userData.email);
+        done();
+      });
+  });
 });
 
 //return correct data
