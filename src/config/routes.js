@@ -9,6 +9,11 @@ function Router($stateProvider, $urlRouterProvider){
       templateUrl: './views/recipes/index.html',
       controller: 'RecipesIndexCtrl'
     })
+    .state('recipesShow', {
+      url: '/recipes/:id',
+      templateUrl: './views/recipes/show.html',
+      controller: 'RecipesShowCtrl'
+    })
     .state('profile', {
       url: '/users/:id',
       templateUrl: './views/users/show.html',
