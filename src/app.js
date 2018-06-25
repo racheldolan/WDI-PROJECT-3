@@ -21,6 +21,9 @@ import AuthLoginCtrl from './controllers/auth/login';
 import AuthRegisterCtrl from './controllers/auth/register';
 //user Controllers Show & Edit
 
+// ----------Directives-------------
+import bulmaCard from './directives/bulmaCard';
+
 
 angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages'])
   .config(Router)
@@ -28,4 +31,5 @@ angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages'])
   .controller('RecipesIndexCtrl', RecipesIndexCtrl)
   .controller('RecipesShowCtrl', RecipesShowCtrl)
   .controller('AuthLoginCtrl', AuthLoginCtrl)
-  .controller('AuthRegisterCtrl', AuthRegisterCtrl);
+  .controller('AuthRegisterCtrl', AuthRegisterCtrl)
+  .directive('bulmaCard', bulmaCard);
