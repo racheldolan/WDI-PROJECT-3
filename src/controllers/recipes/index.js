@@ -1,27 +1,32 @@
 function RecipesIndexCtrl($scope, $http){
-  // $scope.ingredients = {};
+  $scope.ingredient = '';
   // console.log($scope.ingredients);
+  $scope.suggestions = [];
 
-  $scope.search = function(ingredients) {
+  $scope.search = function() {
     // console.log('click');
     $http({
       method: 'GET',
       url: '/api/recipes',
-      qs: ingredients
+      qs: $scope.ingredient
     })
       .then(res => console.log($scope.recipes = res.data));
   };
 
-  $scope.autoSearch = function(query) {
+  $scope.autoSearch = function() {
     // console.log(query);
     $http({
       method: 'GET',
       url: '/api/autocomplete',
-      params: { query: query }
+      params: { query: $scope.ingredient }
     })
-      .then(res => console.log($scope.autocomplete = res.data));
+      .then(res => $scope.suggestions = res.data);
   };
 
+  $scope.setIngredient = function(suggestion){
+    $scope.ingredient = suggestion.name;
+    $scope.suggestions = [];
+  };
 }
 
 module.exports = RecipesIndexCtrl;
