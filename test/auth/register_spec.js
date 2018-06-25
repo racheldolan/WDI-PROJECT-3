@@ -14,16 +14,6 @@ describe('POST /register', () => {
       .then(() => done());
   });
 
-  it('should return a token', done => {
-    api
-      .post('/api/register')
-      .send(userData)
-      .end((err, res) => {
-        expect(res.body.token.split('.').length).to.eq(3);
-        done();
-      });
-  });
-
   it('should return a message', done => {
     api
       .post('/api/register')
