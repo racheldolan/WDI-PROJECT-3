@@ -1,8 +1,15 @@
 <!-- SEARCH BAR -->
 <form ng-submit="search(ingredients)">
-  <div class="section">
-    <input ng-model="ingredients" id="ingredients" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
+  <div class=section>
+    <input ng-model="ingredient" ng-change="autoSearch()" id="ingredient" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
     <button class="button is-danger">Search</button>
+
+    <ul ng-if="suggestions.length > 0">
+      <li ng-repeat="suggestion in suggestions" ng-click="setIngredient(suggestion)">
+        {{ suggestion.name }}
+      </li>
+    </ul>
+
   </div>
 </form>
 
