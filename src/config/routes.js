@@ -1,5 +1,9 @@
 function Router($stateProvider, $urlRouterProvider){
   $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: './views/home.html'
+    })
     .state('recipesIndex', {
       url: '/recipes',
       templateUrl: './views/recipes/index.html',
