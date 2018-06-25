@@ -36,6 +36,7 @@ function getRecipeById(req, res, next) {
     .then(response => res.json(response))
     .catch(next);
 }
+
 module.exports={
   getRecipesByIngredients,
   getRecipeById
