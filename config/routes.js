@@ -8,6 +8,8 @@ router.route('/recipes')
 router.route('/recipes/:id')
   .get(spoonacular.getRecipeById);
 
+router.get('/autocomplete', spoonacular.autocomplete);
+
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
