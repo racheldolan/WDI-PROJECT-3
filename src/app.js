@@ -8,6 +8,8 @@ import 'bulma';
 import 'angular-messages';
 import 'satellizer';
 
+import './scss/style.scss';
+
 //------------Modules------------
 import Router from './config/routes';
 import Auth from './config/satellizer';
