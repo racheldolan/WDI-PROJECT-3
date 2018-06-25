@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const auth = require('../controllers/auth');
 const spoonacular = require('../controllers/spoonacular');
-const secureRoute = require('../lib/secureRoute');
+const users = require('../controllers/users');
+// const secureRoute = require('../lib/secureRoute');
 
 router.route('/recipes')
   .get(spoonacular.getRecipesByIngredients);
@@ -10,6 +11,10 @@ router.route('/recipes/:id')
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
-router.get('/profile', secureRoute, auth.profile);
+
+router.route('/users/:id')
+  .get(users.show);
+  // .put(secureRoute, users.update)
+  // .delete(secureRoute, users.delete);
 
 module.exports = router;
