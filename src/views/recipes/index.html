@@ -10,7 +10,7 @@
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop" ng-repeat="recipe in recipes">
 
-    <a ui-sref="recipesShow({ recipe.id })">
+    <a ui-sref="recipesShow({ id: recipe.id })">
       <bulma-card image="recipe.image" title="recipe.title"></bulma-card>
     </a>
 
