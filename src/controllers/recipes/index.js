@@ -1,16 +1,17 @@
 function RecipesIndexCtrl($scope, $http){
   $scope.ingredient = '';
+  $scope.ingredients = [];
   // console.log($scope.ingredients);
   $scope.suggestions = [];
 
-  $scope.search = function(ingredients) {
+  $scope.search = function() {
     // console.log('click');
     $http({
       method: 'GET',
       url: '/api/recipes',
-      params: { ingredients }
+      params: { ingredients: $scope.ingredients.join(',') }
     })
-      .then(res => console.log($scope.recipes = res.data));
+      .then(res => $scope.recipes = res.data);
   };
 
   $scope.autoSearch = function() {
@@ -24,7 +25,8 @@ function RecipesIndexCtrl($scope, $http){
   };
 
   $scope.setIngredient = function(suggestion){
-    $scope.ingredient = suggestion.name;
+    $scope.ingredients.push(suggestion.name);
+    $scope.ingredient = '';
     $scope.suggestions = [];
   };
 }
