@@ -57,8 +57,25 @@ function autocomplete(req, res, next) {
     .catch(next);
 }
 
+function commentSchema(req, res, next) {
+  rp({
+    url: `${spoonacular}/recipes/findByIngredients`,
+    json: true
+  })
+    .then(recipe => {
+      Comment.find({spoonacularId: recipe.id})
+        .item(comments => {
+          recipe.comments = comments;
+          res.json(recipe);
+        })
+        .then(response => res.json(response))
+        .catch(next);
+    });
+}
+
 module.exports={
   getRecipesByIngredients,
   getRecipeById,
-  autocomplete
+  autocomplete,
+  commentSchema
 };
