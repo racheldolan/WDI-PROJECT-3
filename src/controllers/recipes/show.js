@@ -1,4 +1,4 @@
-function RecipesShowCtrl($scope, $http, $state){
+function RecipesShowCtrl($scope, $http, $state, $auth){
   $scope.data = {};
 
   $http({
@@ -21,5 +21,16 @@ function RecipesShowCtrl($scope, $http, $state){
     })
       .then(res => $scope.recipe.comments.push(res.data));
   };
+
+  $scope.createFavourite = function(recipe) {
+    $http({
+      method: 'POST',
+      url: `/api/users/${$auth.getPayload().sub}/favourites`,
+      data: recipe
+    })
+      .then(res => $scope.favourite = res.data);
+  };
+
 }
+
 export default RecipesShowCtrl;
