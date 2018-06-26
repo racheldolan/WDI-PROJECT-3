@@ -2,6 +2,7 @@ const rp = require('request-promise');
 const { spoonKey } = require('../config/environment');
 const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 
+
 // index route function
 function getRecipesByIngredients(req, res, next) {
   const userInput = req.query.ingredients;
