@@ -7,20 +7,20 @@ function showRoute(req, res, next) {
     .catch(next);
 }
 
-// function updateRoute(req, res, next) {
-//   User.findById(req.params.id)
-//     .then(user => Object.assign(user, req.body))
-//     .then(user => user.save())
-//     .then(user => res.json(user))
-//     .catch(next);
-// }
+function updateRoute(req, res, next) {
+  User.findById(req.params.id)
+    .then(user => Object.assign(user, req.body))
+    .then(user => user.save())
+    .then(user => res.json(user))
+    .catch(next);
+}
 
-// function deleteRoute(req, res, next) {
-//   User.findById(req.params.id)
-//     .then(user => user.remove())
-//     .then(() => res.sendStatus(204))
-//     .catch(next);
-// }
+function deleteRoute(req, res, next) {
+  User.findById(req.params.id)
+    .then(user => user.remove())
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
 
 function profile(req, res) {
   return res.json(req.currentUser);
@@ -34,15 +34,9 @@ function createRecipeFavouriteRoute(req, res, next) {
 }
 
 module.exports = {
-<<<<<<< HEAD
-  show: showRoute
-  // update: updateRoute,
-  // delete: deleteRoute
-=======
   show: showRoute,
   update: updateRoute,
   delete: deleteRoute,
   createFavourite: createRecipeFavouriteRoute,
   profile: profile
->>>>>>> f503e5d14edf1200c19bf8a29cd04039e50db0d2
 };
