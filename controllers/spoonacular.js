@@ -59,7 +59,7 @@ function autocomplete(req, res, next) {
 
 function commentSchema(req, res, next) {
   rp({
-    url: `${spoonacular}/recipes/findByIngredients`,
+    url: `${spoonacular}/recipes/${req.params.id}/information`,
     json: true
   })
     .then(recipe => {
