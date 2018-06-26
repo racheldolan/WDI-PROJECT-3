@@ -20,9 +20,9 @@ function Router($stateProvider, $urlRouterProvider){
       controller: 'UsersShowCtrl'
     })
     .state('usersEdit', {
-      url: '/users/edit',
+      url: '/users/:id/edit',
       templateUrl: './views/users/edit.html',
-      controller: 'UsersNewCtrl'
+      controller: 'UsersEditCtrl'
     })
     .state('login', {
       url: '/login',

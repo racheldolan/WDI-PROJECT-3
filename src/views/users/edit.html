@@ -1,0 +1,20 @@
+<form ng-submit="updateUser()">
+  <div class="field">
+    <label class="label" for="username">Username</label>
+    <input class="input" id="name" name="name" placeholder="Name" ng-model="data.username"/>
+  </div>
+  <div class="field">
+    <label class="label" for="image">Image</label>
+    <button class="button" id="image" name="image" placeholder="Image" file-picker ng-model="data.image">Choose File</button>
+  </div>
+
+<img src="{{ data.image }}" ng-if="data.image">
+
+  {{ data.image }}
+  <div class="field">
+    <label class="label" for="bio">bio</label>
+    <input class="input" id="bio" name="bio" placeholder="bio" ng-model="data.bio"/>
+  </div>
+
+  <button class="button">Update</button>
+</form>
