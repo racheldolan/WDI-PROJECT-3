@@ -8,11 +8,11 @@
     <!-- put bulma card in here with ng-repeat -->
     <p>Favourite Recipes</p>
     <div class="columns is-multiline">
-      <div class="column is-one-third-desktop" ng-repeat="favourite in user.favourites">
+      <div class="column is-half-desktop" ng-repeat="favourite in user.favourites">
         <a ui-sref="recipesShow({ id: favourite.id })">
           <bulma-card image="favourite.image" title="favourite.title"></bulma-card>
         </a>
-
+        <button class="button is-danger" ng-click="deleteFavourite()">Delete Favourite</button>
       </div>
     </div>
   </div>

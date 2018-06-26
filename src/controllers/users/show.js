@@ -13,7 +13,13 @@ function UsersShowCtrl($scope, $http, $state){
     })
       .then(() => $state.go('home'));
   };
-
+  $scope.deleteFavourite = function() {
+    $http({
+      method: 'DELETE',
+      url: `/api/users/${$state.params.id}/favourites`
+    })
+      .then(() => $state.go('profile'));
+  };
 
 
 }

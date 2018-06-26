@@ -10,8 +10,9 @@ router.route('/recipes')
 router.route('/recipes/:id/information')
   .get(spoonacular.getRecipeById);
 
-router.post('/users/:id/favourites', secureRoute, users.createFavourite);
-//deletefavouriterecipe
+router.route('/users/:id/favourites')
+  .post(secureRoute, users.createFavourite)
+  .delete(secureRoute, users.deleteFavourite);
 
 router.route('/profile')
   .get(secureRoute, users.profile);

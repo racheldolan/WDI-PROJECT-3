@@ -1,10 +1,11 @@
 import angular from 'angular';
-
 //------------3rd Party Dependencies------------
 import '@uirouter/angularjs';
 import 'angular-messages';
 import 'satellizer';
 import 'angular-sanitize';
+import 'filepicker-js';
+import 'angular-filepicker/dist/angular_filepicker';
 
 import 'bulma';
 import './scss/style.scss';
@@ -12,6 +13,7 @@ import './scss/style.scss';
 //------------Modules------------
 import Router from './config/routes';
 import Auth from './config/satellizer';
+import Upload from './config/filepicker';
 
 //------------Controllers------------
 import MainCtrl from './controllers/main';
@@ -25,10 +27,13 @@ import UsersEditCtrl from './controllers/users/edit';
 
 // ----------Directives-------------
 import bulmaCard from './directives/bulmaCard';
+import filePicker from './directives/filePicker';
 
-angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitize'])
+
+angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitize','angular-filepicker'])
   .config(Router)
   .config(Auth)
+  .config(Upload)
   .controller('MainCtrl', MainCtrl)
   .controller('RecipesIndexCtrl', RecipesIndexCtrl)
   .controller('RecipesShowCtrl', RecipesShowCtrl)
@@ -36,4 +41,5 @@ angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitiz
   .controller('AuthRegisterCtrl', AuthRegisterCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
-  .directive('bulmaCard', bulmaCard);
+  .directive('bulmaCard', bulmaCard)
+  .directive('filePicker', filePicker);
