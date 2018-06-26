@@ -32,15 +32,16 @@ function createFavouriteRoute(req, res, next) {
     .then(user => res.json(user))
     .catch(next);
 }
-function deleteFavouriteRoute(req, res, next) {
-  return User.findById(req.currentUser._id)
-    .then(user => {
-      user.favourites = user.favourites.filter(favourite => !favourite.equals(req.params.id));
-      return user.save();
-    })
-    .then(user => res.status(201).json(user))
-    .catch(next);
-}
+//abandoned for now!
+// function deleteFavouriteRoute(req, res, next) {
+//   return User.findById(req.currentUser._id)
+//     .then(user => {
+//       user.favourites = user.favourites.filter(favourite => !favourite.equals(req.params.id));
+//       return user.save();
+//     })
+//     .then(user => res.status(201).json(user))
+//     .catch(next);
+// }
 
 
 
@@ -49,6 +50,6 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   createFavourite: createFavouriteRoute,
-  deleteFavourite: deleteFavouriteRoute,
+  // deleteFavourite: deleteFavouriteRoute,
   profile: profile
 };
