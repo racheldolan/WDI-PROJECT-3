@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>What's in my fridge?</title>
 </head>
-<body>
+<body ng-controller="MainCtrl">
 
   <nav class="navbar is-fixed-top">
   <div class="navbar-brand">
@@ -19,7 +19,7 @@
 
   <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
     <div class="navbar-start">
-      <a class="navbar-item" ui-sref="profile" ng-if="!isAuthenticated()">Profile</a>
+      <a class="navbar-item" ui-sref="profile({ id: currentUserId })" ng-if="isAuthenticated()">Profile</a>
       <a class="navbar-item" ui-sref="recipesIndex">Search</a>
     </div>
     <div class="navbar-end">
