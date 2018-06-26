@@ -3,10 +3,8 @@ const jwt =require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
 function register(req, res, next) {
-  console.log(req.body);
   User.create(req.body)
     .then(user => {
-      // const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '24h' });
       res.json({
         user,
         message: 'Thank you for registering' });
@@ -33,11 +31,6 @@ function login(req, res, next) {
     .catch(next);
 }
 
-// function profile (req, res, next){
-//   User.populate(req.currentUser, { path: 'recipies' })
-//     .then(user => res.json(user))
-//     .catch(next);
-// }
 
 module.exports = {
   register,

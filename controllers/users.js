@@ -32,7 +32,7 @@ function createFavouriteRoute(req, res, next) {
     .then(user => res.json(user))
     .catch(next);
 }
-//abandoned for now!
+//abandoned for now
 // function deleteFavouriteRoute(req, res, next) {
 //   return User.findById(req.currentUser._id)
 //     .then(user => {

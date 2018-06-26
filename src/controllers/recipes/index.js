@@ -1,11 +1,11 @@
 function RecipesIndexCtrl($scope, $http){
   $scope.ingredient = '';
   $scope.ingredients = [];
-  // console.log($scope.ingredients);
+
   $scope.suggestions = [];
 
   $scope.search = function() {
-    // console.log('click');
+
     $http({
       method: 'GET',
       url: '/api/recipes',
@@ -15,7 +15,7 @@ function RecipesIndexCtrl($scope, $http){
   };
 
   $scope.autoSearch = function() {
-    // console.log(query);
+
     $http({
       method: 'GET',
       url: '/api/autocomplete',

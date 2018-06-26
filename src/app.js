@@ -25,7 +25,6 @@ import UsersShowCtrl from './controllers/users/show';
 import UsersEditCtrl from './controllers/users/edit';
 //user Controllers Show & Edit
 
-// ----------Directives-------------
 import bulmaCard from './directives/bulmaCard';
 import filePicker from './directives/filePicker';
 
