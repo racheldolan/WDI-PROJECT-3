@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
-  spoonacular: { type: String, required: true },
-  comment: { type: String, required: true },
-  // comment: { type: mongoose.Schema.ObjectId, ref: 'User', required: true},
+  spoonacularId: { type: Number },
+  content: { type: String, required: true },
+  author: { type: mongoose.Schema.ObjectId, ref: 'User', required: true},
   rating: { type: Number, min: 1, max: 5}
 });
 
@@ -14,4 +14,4 @@ commentSchema.virtual('avgRating')
     }, 0) / this.comments.length);
   });
 
-module.exports = mongoose.model(commentSchema);
+module.exports = mongoose.model( 'Comment', commentSchema);
