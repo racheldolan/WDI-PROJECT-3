@@ -1,13 +1,13 @@
-<article class="media" ng-model="data.content">
-  <figure class="media-left">
-    <p class= image="user.image"></p>
-    <h4 class="title is-4"><strong>{{ username }}</strong></h4>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <h4 class="title is-4">BIO</h4>
-      <textarea class="textarea" placeholder="What kind of food are you feeling?" rows="8"></textarea>
-    </div>
+<section class="columns">
+  <div class="column is-half-desktop">
+    <img src="{{ user.image }}" alt="{{ user.username }}">
+    <h5 class="subtitle">{{ user.username }}</h5>
+    <h5>Bio:</h5>
+    <p>{{ user.bio}}</p>
   </div>
-    <button class="edit">Edit</button>
-</article>
+  <div class="column is-half-desktop">
+    <p>Favourite Recipes</p>
+    <!-- put bulma card in here with ng-repeat -->
+  </div>
+</section>
+<a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>

@@ -1,4 +1,5 @@
 function RecipesShowCtrl($scope, $http, $state){
+  $scope.data = {};
 
   $http({
     method: 'GET',
