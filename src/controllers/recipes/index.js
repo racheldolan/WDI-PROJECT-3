@@ -31,4 +31,4 @@ function RecipesIndexCtrl($scope, $http){
   };
 }
 
-module.exports = RecipesIndexCtrl;
+export default RecipesIndexCtrl;

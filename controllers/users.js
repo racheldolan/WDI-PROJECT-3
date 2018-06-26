@@ -1,8 +1,8 @@
 const User = require('../models/user');
 
 function showRoute(req, res, next) {
-  User.findById(req.currentUser)
-    // .populate('favoriteRecipes')
+  User.findById(req.params.id)
+    .populate('favorites')
     .then(user => res.json(user))
     .catch(next);
 }
@@ -22,8 +22,27 @@ function showRoute(req, res, next) {
 //     .catch(next);
 // }
 
+function profile(req, res) {
+  return res.json(req.currentUser);
+}
+
+function createRecipeFavouriteRoute(req, res, next) {
+  req.currentUser.favourites.push(req.body);
+  req.currentUser.save()
+    .then(user => res.json(user))
+    .catch(next);
+}
+
 module.exports = {
+<<<<<<< HEAD
   show: showRoute
   // update: updateRoute,
   // delete: deleteRoute
+=======
+  show: showRoute,
+  update: updateRoute,
+  delete: deleteRoute,
+  createFavourite: createRecipeFavouriteRoute,
+  profile: profile
+>>>>>>> f503e5d14edf1200c19bf8a29cd04039e50db0d2
 };
