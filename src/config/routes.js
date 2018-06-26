@@ -9,15 +9,20 @@ function Router($stateProvider, $urlRouterProvider){
       templateUrl: './views/recipes/index.html',
       controller: 'RecipesIndexCtrl'
     })
+    .state('recipesShow', {
+      url: '/recipes/:id',
+      templateUrl: './views/recipes/show.html',
+      controller: 'RecipesShowCtrl'
+    })
     .state('profile', {
       url: '/users/:id',
       templateUrl: './views/users/show.html',
       controller: 'UsersShowCtrl'
     })
     .state('usersEdit', {
-      url: '/users/edit',
+      url: '/users/:id/edit',
       templateUrl: './views/users/edit.html',
-      controller: 'UsersNewCtrl'
+      controller: 'UsersEditCtrl'
     })
     .state('login', {
       url: '/login',

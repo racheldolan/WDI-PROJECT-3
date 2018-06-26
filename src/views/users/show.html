@@ -1,1 +1,13 @@
-<h1>USER SHOW PAGE</h1>
+<section class="columns">
+  <div class="column is-half-desktop">
+    <img src="{{ user.image }}" alt="{{ user.username }}">
+    <h5 class="subtitle">{{ user.username }}</h5>
+    <h5>Bio:</h5>
+    <p>{{ user.bio}}</p>
+  </div>
+  <div class="column is-half-desktop">
+    <p>Favourite Recipes</p>
+    <!-- put bulma card in here with ng-repeat -->
+  </div>
+</section>
+<a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
