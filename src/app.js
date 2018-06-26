@@ -23,7 +23,6 @@ import UsersShowCtrl from './controllers/users/show';
 import UsersEditCtrl from './controllers/users/edit';
 //user Controllers Show & Edit
 
-// ----------Directives-------------
 import bulmaCard from './directives/bulmaCard';
 
 angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitize'])

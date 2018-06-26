@@ -6,17 +6,25 @@ const secureRoute = require('../lib/secureRoute');
 
 router.route('/recipes')
   .get(spoonacular.getRecipesByIngredients);
+
 router.route('/recipes/:id/information')
   .get(spoonacular.getRecipeById);
+
+router.post('/users/:id/favourites', secureRoute, users.createFavourite);
+//deletefavouriterecipe
+
+router.route('/profile')
+  .get(secureRoute, users.profile);
 
 router.get('/autocomplete', spoonacular.autocomplete);
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
+
+
 router.route('/users/:id')
-  .get(users.show)
-  .put(secureRoute, users.update)
-  .delete(secureRoute, users.delete);
+  .get(secureRoute, users.show);
+
 
 module.exports = router;
