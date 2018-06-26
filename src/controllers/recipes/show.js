@@ -1,4 +1,4 @@
-function RecipesShowCtrl($scope, $http, $state){
+function RecipesShowCtrl($scope, $http, $state, $auth){
   $scope.data = {};
 
   $http({
@@ -6,6 +6,16 @@ function RecipesShowCtrl($scope, $http, $state){
     url: `/api/recipes/${$state.params.id}/information`
   })
     .then(res => console.log($scope.recipe = res.data));
+
+  $scope.createFavourite = function(recipe) {
+    $http({
+      method: 'POST',
+      url: `/api/users/${$auth.getPayload().sub}/favourites`,
+      data: recipe
+    })
+      .then(res => $scope.favourite = res.data);
+  };
+
 }
 
-module.exports = RecipesShowCtrl;
+export default RecipesShowCtrl;

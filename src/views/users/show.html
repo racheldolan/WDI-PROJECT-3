@@ -5,9 +5,16 @@
     <h5>Bio:</h5>
     <p>{{ user.bio}}</p>
   </div>
-  <div class="column is-half-desktop">
-    <p>Favourite Recipes</p>
     <!-- put bulma card in here with ng-repeat -->
+    <p>Favourite Recipes</p>
+    <div class="columns is-multiline">
+      <div class="column is-one-third-desktop" ng-repeat="favourite in user.favourites">
+        <a ui-sref="recipesShow({ id: favourite.id })">
+          <bulma-card image="favourite.image" title="favourite.title"></bulma-card>
+        </a>
+
+      </div>
+    </div>
   </div>
 </section>
 <a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
