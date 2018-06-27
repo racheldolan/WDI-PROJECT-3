@@ -3,7 +3,7 @@ function RecipesIndexCtrl($scope, $http){
   $scope.ingredients = [];
 
   $scope.suggestions = [];
-
+  $scope.sort = 'likes';
   $scope.search = function() {
 
     $http({
