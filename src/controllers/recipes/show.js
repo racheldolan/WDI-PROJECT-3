@@ -1,4 +1,4 @@
-function RecipesShowCtrl($scope, $http, $state, $auth){
+function RecipesShowCtrl($scope, $http, $state, $auth, $rootScope){
   $scope.data = {};
 
   $http({
@@ -28,9 +28,15 @@ function RecipesShowCtrl($scope, $http, $state, $auth){
       url: `/api/users/${$auth.getPayload().sub}/favourites`,
       data: recipe
     })
-      .then(res => $scope.favourite = res.data);
-  };
+      .then(res => $scope.favourite = res.data)
+      .catch(() => {
+        $rootScope.$broadcast('flashMessage', {
+          type: 'danger',
+          content: 'Please log in to favourite'
+        });
 
+      });
+  };
 }
 
 export default RecipesShowCtrl;
