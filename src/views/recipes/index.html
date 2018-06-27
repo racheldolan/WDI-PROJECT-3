@@ -26,25 +26,32 @@
 
     <h2 class="title">Selected ingredients</h2>
     <div ng-if="ingredients.length > 0" ng-repeat="ingredient in ingredients">
-    <ul class="ingredients">
-      <li>
-        {{ ingredient }}
-      </li>
-    </ul>
-    <button class="delete" ng-click="deleteIngredient(ingredient)"></button>
-  </div>
+      <ul class="ingredients">
+        <li>
+          {{ ingredient }}
+        </li>
+      </ul>
+      <button class="delete" ng-click="deleteIngredient(ingredient)"></button>
+    </div>
 
     <button class="button is-danger">Search</button>
 
-</form>
+    <div class="select is-fullwidth">
+      <select ng-model="sort">
+        <option value=""></option>
+        <option value="-likes">Sort by likes</option>
+      </select>
+    </div>
 
-<!-- cards displaying recipes -->
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop" ng-repeat="recipe in recipes">
+  </form>
 
-    <a ui-sref="recipesShow({ id: recipe.id })">
-      <bulma-card image="recipe.image" title="recipe.title"></bulma-card>
-    </a>
+  <!-- cards displaying recipes -->
+  <div class="columns is-multiline">
+    <div class="column is-one-third-desktop" ng-repeat="recipe in recipes | orderBy: sort">
 
+      <a ui-sref="recipesShow({ id: recipe.id })">
+        <bulma-card image="recipe.image" title="recipe.title" subtitle="recipe.likes"></bulma-card>
+      </a>
+
+    </div>
   </div>
-</div>

@@ -4,7 +4,7 @@ function RecipesIndexCtrl($scope, $http){
   $scope.diet = '';
 
   $scope.suggestions = [];
-
+  $scope.sort = 'likes';
   $scope.search = function() {
     console.log($scope.diet);
     $http({
