@@ -8,27 +8,27 @@
 <body ng-controller="MainCtrl">
 
   <nav class="navbar is-fixed-top">
-  <div class="navbar-brand">
-    <a class="navbar-item" ui-sref="home">Home</a>
+    <div class="navbar-brand">
+      <a class="navbar-item" ui-sref="home">Home</a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" ng-class="{ 'is-active': navbarOpen }" ng-click="toggleMenu()">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" ng-class="{ 'is-active': navbarOpen }" ng-click="toggleMenu()">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
 
-  <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
-    <div class="navbar-start">
-      <a class="navbar-item" ui-sref="profile({ id: currentUserId })" ng-if="isAuthenticated()">Profile</a>
-      <a class="navbar-item" ui-sref="recipesIndex">Search</a>
+    <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
+      <div class="navbar-start">
+        <a class="navbar-item" ui-sref="profile({ id: currentUserId })" ng-if="isAuthenticated()">Profile</a>
+        <a class="navbar-item" ui-sref="recipesIndex">Search</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" ui-sref="login" ng-if="!isAuthenticated()">Login</a>
+        <a class="navbar-item" ui-sref="register" ng-if="!isAuthenticated()">Register</a>
+        <a class="navbar-item" ng-click="logout()" ng-if="isAuthenticated()">Logout</a>
+      </div>
     </div>
-    <div class="navbar-end">
-      <a class="navbar-item" ui-sref="login" ng-if="!isAuthenticated()">Login</a>
-      <a class="navbar-item" ui-sref="register" ng-if="!isAuthenticated()">Register</a>
-      <a class="navbar-item" ng-click="logout()" ng-if="isAuthenticated()">Logout</a>
-    </div>
-  </div>
   </nav>
 
   <div class="notification is-{{flashMessage.type}} is-flash" ng-class="{ 'is-active': flashMessage }">
@@ -36,5 +36,22 @@
   </div>
 
   <ui-view></ui-view>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <div class="socialMedia">
+          <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#"><i class="fab fa-github-square fa-2x"></i></a>
+          <a href="#"><i class="fas fa-address-book fa-2x"></i></a>
+        </div>
+        <p>Made by Rachel Dolan, Natasha Ramburrun Linda Lê</p>
+        <a href="mailto:chaulonglindale@gmail.com" class="button is-danger">Let's Grab a Coffee   <i class="fas fa-coffee"></i></a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
