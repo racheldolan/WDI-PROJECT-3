@@ -22,6 +22,7 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+
 function profile(req, res) {
   return res.json(req.currentUser);
 }
@@ -32,6 +33,15 @@ function createFavouriteRoute(req, res, next) {
     .then(user => res.json(user))
     .catch(next);
 }
+
+function deleteFavouriteRoute(req, res, next) {
+  req.currentUser.favourites.findById(req.params.id)
+    .then(favourite => favourite.remove())
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
+
 //abandoned for now
 // function deleteFavouriteRoute(req, res, next) {
 //   return User.findById(req.currentUser._id)
@@ -43,13 +53,11 @@ function createFavouriteRoute(req, res, next) {
 //     .catch(next);
 // }
 
-
-
 module.exports = {
   show: showRoute,
   update: updateRoute,
   delete: deleteRoute,
   createFavourite: createFavouriteRoute,
-  // deleteFavourite: deleteFavouriteRoute,
+  deleteFavourite: deleteFavouriteRoute,
   profile: profile
 };
