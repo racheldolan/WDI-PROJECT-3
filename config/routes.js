@@ -6,11 +6,13 @@ const Comment = require('../controllers/comments');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/recipes')
-  .get(spoonacular.getRecipesByIngredients);
+  .get(spoonacular.getRecipesByComplexSearch);
 router.route('/recipes/:id')
   .get(spoonacular.getRecipeById);
 
-router.post('/users/:id/favourites', secureRoute, Users.createFavourite);
+router.route('/recipes/:id/favourites')
+  .post(secureRoute, Users.createFavourite)
+  .delete(secureRoute, Users.deleteFavourite);
 //deletefavouriterecipe
 
 router.route('/profile')
