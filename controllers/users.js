@@ -26,17 +26,30 @@ function profile(req, res) {
   return res.json(req.currentUser);
 }
 
-function createRecipeFavouriteRoute(req, res, next) {
+function createFavouriteRoute(req, res, next) {
   req.currentUser.favourites.push(req.body);
   req.currentUser.save()
     .then(user => res.json(user))
     .catch(next);
 }
+//abandoned for now
+// function deleteFavouriteRoute(req, res, next) {
+//   return User.findById(req.currentUser._id)
+//     .then(user => {
+//       user.favourites = user.favourites.filter(favourite => !favourite.equals(req.params.id));
+//       return user.save();
+//     })
+//     .then(user => res.status(201).json(user))
+//     .catch(next);
+// }
+
+
 
 module.exports = {
   show: showRoute,
   update: updateRoute,
   delete: deleteRoute,
-  createFavourite: createRecipeFavouriteRoute,
+  createFavourite: createFavouriteRoute,
+  // deleteFavourite: deleteFavouriteRoute,
   profile: profile
 };

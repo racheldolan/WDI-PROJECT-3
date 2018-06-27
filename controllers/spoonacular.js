@@ -1,6 +1,8 @@
 const rp = require('request-promise');
 const { spoonKey } = require('../config/environment');
 const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com';
+const Comment = require('../models/comment');
+
 
 // index route function
 function getRecipesByIngredients(req, res, next) {
@@ -9,7 +11,12 @@ function getRecipesByIngredients(req, res, next) {
   rp({
     method: 'GET',
     url: `${spoonacular}/recipes/findByIngredients`,
-    qs: { ingredients: userInput },
+    qs: {
+      number: 15,
+      ranking: 2,
+      fillIngredients: true,
+      ingredients: userInput
+    },
     headers: { 'x-mashape-key': spoonKey },
     json: true
   })
@@ -31,7 +38,14 @@ function getRecipeById(req, res, next) {
     },
     json: true
   })
-    .then(response => res.json(response))
+    .then(recipe => {
+      Comment.find({spoonacularId: recipe.id})
+        .populate('author')
+        .then(comments => {
+          recipe.comments = comments;
+          res.json(recipe);
+        });
+    })
     .catch(next);
 }
 
@@ -52,8 +66,17 @@ function autocomplete(req, res, next) {
     .catch(next);
 }
 
-module.exports={
+function commentCreate(req, res, next) {
+  req.body.author = req.currentUser;
+  Comment.create(req.body)
+    .then(comment => res.json(comment))
+    .catch(next);
+}
+
+
+module.exports= {
   getRecipesByIngredients,
   getRecipeById,
-  autocomplete
+  autocomplete,
+  commentCreate
 };
