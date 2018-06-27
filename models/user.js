@@ -10,15 +10,8 @@ const userSchema = new mongoose.Schema({
   image: { type: String, default: 'https://www.mycookmaster.com/skin/frontend/rwd/default/new_service/defaultService.png'},
   bio: { type: String, default: 'Change your bio!' },
   favourites: []
-// }, {
-//   id: false
-});
 
-// userSchema.virtual('recipes', {
-//   localField: '_id',
-//   foreignField: 'owner',
-//   ref: 'recipes'
-// });
+});
 
 userSchema.set('toJSON', {
   virtuals: true,

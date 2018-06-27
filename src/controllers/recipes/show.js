@@ -19,7 +19,8 @@ function RecipesShowCtrl($scope, $http, $state, $auth, $rootScope){
         rating: $scope.data.rating
       }
     })
-      .then(res => $scope.recipe.comments.push(res.data));
+      .then(res => $scope.recipe.comments.push(res.data))
+      .then(() => $state.go($state.current, {}, {reload: true}));
   };
 
   $scope.deleteComment = function(comment) {
