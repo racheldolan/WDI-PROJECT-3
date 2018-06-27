@@ -40,13 +40,16 @@
 .home-page {
   height: 700px;
   max-width: 318px;
-  background-color: #FF7D5D;
+  background-color: $primary;
   // background-color: #57D09B;
   z-index: 1;
 }
 
 .button-home-page {
-  margin-top: 70%;
+  margin-top: 20%;
+  margin-left: 20%;
+  width: 150px;
+  background-color: $accentColour;
 }
 
 .image-gallery {
@@ -81,6 +84,11 @@ a.navbar-item:hover, .navbar-link:hover {
   color: white;
   text-decoration: none;
 }
+
+// leave this in as figuring out how to change color when state changes
+// div.navbar-menu, a.navbar-item {
+//   background-color: $primary;
+// }
 
 #one {
   animation: xfade 16s 0s infinite;
