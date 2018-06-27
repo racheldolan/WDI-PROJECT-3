@@ -2,25 +2,15 @@
 <div class="columns is-multiline">
   <div class="column is-half-desktop">
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> development
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
           <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
         </figure>
       </div>
-<<<<<<< HEAD
     </div>
-=======
-
->>>>>>> development
   </div>
-</div>
+
 
   <div class="column is-half-desktop">
       <div class="card-content">
@@ -35,33 +25,24 @@
             <li ng-repeat="ingredient in recipe.extendedIngredients">{{ ingredient.name }}</li>
           </ul>
           </div>
-<<<<<<< HEAD
+
           <div class="buttons">
-            <a class="button">Add to Favourites</a>
-            <a class="button" ui-sref="recipesIndex">Back to Search</a>
-=======
-        </div>
-        <div class="content">
           <button class=" is-primary" ng-click="createFavourite(recipe)">Favourite this recipe!</button>
-         <a></a>.
-          <a href="#"></a> <a href="#"></a>
-          <br>
->>>>>>> development
+            <a class="button" ui-sref="recipesIndex">Back to Search</a>
+
         </div>
       </div>
     </div>
 </div>
+</div>
 
 
-    <div class="columns is-multiline">
       <div class="column">
       <div class="media-content">
         <h1 class="title">Instructions</h1>
         <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
       </div>
     </div>
-<<<<<<< HEAD
-=======
 
 
     <div class="column is-half-desktop">
@@ -105,8 +86,8 @@
 
 </div>
 
->>>>>>> development
-    </div>
+
+
 
 
 
