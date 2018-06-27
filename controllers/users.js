@@ -32,6 +32,8 @@ function createFavouriteRoute(req, res, next) {
     .then(user => res.json(user))
     .catch(next);
 }
+
+
 //abandoned for now
 // function deleteFavouriteRoute(req, res, next) {
 //   return User.findById(req.currentUser._id)
@@ -50,6 +52,6 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   createFavourite: createFavouriteRoute,
-  // deleteFavourite: deleteFavouriteRoute,
   profile: profile
+
 };
