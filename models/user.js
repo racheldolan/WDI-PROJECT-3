@@ -7,13 +7,12 @@ const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, minLength: 2,  required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true},
-  avatar: { type: String, default: 'https://www.mycookmaster.com/skin/frontend/rwd/default/new_service/defaultService.png'},
-  bio: { type: String }
+  image: { type: String, default: 'https://www.mycookmaster.com/skin/frontend/rwd/default/new_service/defaultService.png'},
+  bio: { type: String, default: 'Change your bio!' },
+  favourites: []
 // }, {
 //   id: false
 });
-
-
 
 // userSchema.virtual('recipes', {
 //   localField: '_id',
@@ -57,8 +56,5 @@ userSchema.pre('save', function hashPassword(next) {
 userSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
 };
-
-
-//comment schema
 
 module.exports = mongoose.model('User', userSchema);

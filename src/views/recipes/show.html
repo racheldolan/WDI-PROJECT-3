@@ -2,14 +2,25 @@
 <div class="columns is-multiline">
   <div class="column is-half-desktop">
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> development
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
           <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
         </figure>
       </div>
+<<<<<<< HEAD
     </div>
+=======
+
+>>>>>>> development
   </div>
+</div>
 
   <div class="column is-half-desktop">
       <div class="card-content">
@@ -24,9 +35,18 @@
             <li ng-repeat="ingredient in recipe.extendedIngredients">{{ ingredient.name }}</li>
           </ul>
           </div>
+<<<<<<< HEAD
           <div class="buttons">
             <a class="button">Add to Favourites</a>
             <a class="button" ui-sref="recipesIndex">Back to Search</a>
+=======
+        </div>
+        <div class="content">
+          <button class=" is-primary" ng-click="createFavourite(recipe)">Favourite this recipe!</button>
+         <a></a>.
+          <a href="#"></a> <a href="#"></a>
+          <br>
+>>>>>>> development
         </div>
       </div>
     </div>
@@ -40,6 +60,52 @@
         <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
       </div>
     </div>
+<<<<<<< HEAD
+=======
+
+
+    <div class="column is-half-desktop">
+      <h4 class="title is-4">Comments</h4>
+      <article class="media" ng-repeat="comment in recipe.comments">
+        <div class="media-content">
+          <div class="content">
+            <strong>{{ user.username }}</strong>
+            <p>
+              {{ comment.content }}
+            </p>
+          <small>{{ '⭐️'.repeat(comment.rating) }}</small>
+        </div>
+      </article>
+    </div>
+  <hr />
+    <form ng-submit="createComment()">
+      <div class="field">
+        <label class="label">Comment</label>
+        <textarea class="textarea" ng-model="data.content"></textarea>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="label">Rating</label>
+          <div class="select">
+            <select ng-model="data.rating">
+              <option value="">Please select</option>
+              <option value="1">⭐️</option>
+              <option value="2">⭐️⭐️</option>
+              <option value="3">⭐️⭐️⭐️</option>
+              <option value="4">⭐️⭐️⭐️⭐️</option>
+              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button class="button is-primary">Submit</button>
+    </form>
+
+</div>
+
+>>>>>>> development
     </div>
 
 

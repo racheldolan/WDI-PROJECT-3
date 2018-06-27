@@ -53,8 +53,8 @@ mongoose.connect(dbURI, (err, db) => {
     passwordConfirmation: 'bianca'
   }])
 
-    .then(users => console.log(`${users.length} users created`))
-    .catch(err => console.log(err))
+    .then(users => `${users.length} users created`)
+    .catch(err => err)
     .finally(() => mongoose.connection.close());
 
 });
