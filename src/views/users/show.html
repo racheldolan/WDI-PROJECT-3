@@ -1,14 +1,26 @@
-<section class="columns">
-  <div class="column is-half-desktop">
-    <img src="{{ user.image }}" alt="{{ user.username }}">
-    <h5 class="subtitle">{{ user.username }}</h5>
-    <h5>Bio:</h5>
-    <p>{{ user.bio}}</p>
-  </div>
-    <!-- put bulma card in here with ng-repeat -->
+<section class="user-show">
+
+<article class="media-profileInfo">
+  <figure class="media-left">
+   <p class="image is-128x128">
+     <img src="{{ user.image }}" alt="{{ user.username }}">
+   </p>
+ </figure>
+ <div class="media-content">
+   <div class="content">
+     <p>
+       <h5 class="subtitle">{{ user.username }}</h5>
+       <br>
+       <h5>Tell us about yourself here:</h5>
+       <p>{{ user.bio }}</p>
+     </p>
+   </div>
+ </div>
+</article>
+<article class="media-recipesFav">
     <p>Favourite Recipes</p>
     <div class="columns is-multiline">
-      <div class="column is-half-desktop" ng-repeat="favourite in user.favourites">
+      <div class="column is-quarter-desktop" ng-repeat="favourite in user.favourites">
         <a ui-sref="recipesShow({ id: favourite.id })">
           <bulma-card image="favourite.image" title="favourite.title"></bulma-card>
         </a>
@@ -16,6 +28,7 @@
       </div>
     </div>
   </div>
-</section>
 <a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
 <button class="button is-danger" ng-click="deleteUser()">Delete</button>
+</article>
+</section>
