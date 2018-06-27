@@ -32,9 +32,6 @@ function createFavouriteRoute(req, res, next) {
     .then(user => res.json(user))
     .catch(next);
 }
-// abandoned for now
-
-
 
 module.exports = {
   show: showRoute,
