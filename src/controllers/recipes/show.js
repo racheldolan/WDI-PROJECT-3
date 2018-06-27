@@ -22,6 +22,17 @@ function RecipesShowCtrl($scope, $http, $state, $auth){
       .then(res => $scope.recipe.comments.push(res.data));
   };
 
+  $scope.deleteComment = function(comment) {
+    $http({
+      method: 'DELETE',
+      url: `/api/comments/${comment._id}`
+    })
+      .then(() => {
+        const index = $scope.recipe.comments.indexOf(comment);
+        $scope.recipe.comments.splice(index, 1);
+      });
+  };
+
   $scope.createFavourite = function(recipe) {
     $http({
       method: 'POST',

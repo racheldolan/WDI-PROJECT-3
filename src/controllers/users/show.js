@@ -14,8 +14,6 @@ function UsersShowCtrl($scope, $http, $state){
       .then(() => $state.go('home'));
   };
 
-
-
 }
 
 

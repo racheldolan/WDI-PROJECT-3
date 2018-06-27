@@ -1,9 +1,6 @@
 <section class="recipe-show">
 <div class="columns is-multiline">
   <div class="column is-half-desktop">
-<<<<<<< HEAD
-    <bulma-card image="recipe.image" title="recipe.name"></bulma-card>
-=======
 
     <div class="card">
       <div class="card-image">
@@ -11,7 +8,7 @@
           <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
         </figure>
       </div>
->>>>>>> development
+
   </div>
 </div>
 
@@ -47,7 +44,7 @@
         <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
       </div>
     </div>
-<<<<<<< HEAD
+
 
     <div class="column is-half-desktop">
       <h4 class="title is-4">Comments</h4>
@@ -59,11 +56,12 @@
               {{ comment.content }}
             </p>
           <small>{{ '⭐️'.repeat(comment.rating) }}</small>
+          <button ng-click="deleteComment(comment)" type="submit" class="button is-small is-danger">Delete</button>
         </div>
       </article>
     </div>
   <hr />
-    <form ng-submit="createComment()">
+    <form ng-submit="createComment()" ng-if="isAuthenticated()">
       <div class="field">
         <label class="label">Comment</label>
         <textarea class="textarea" ng-model="data.content"></textarea>
@@ -84,15 +82,14 @@
           </div>
         </div>
       </div>
-
       <button class="button is-primary">Submit</button>
+
     </form>
 
 </div>
-=======
+
     </div>
 
 
 
 </section>
->>>>>>> development

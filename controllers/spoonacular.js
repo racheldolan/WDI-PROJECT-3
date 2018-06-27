@@ -61,17 +61,9 @@ function autocomplete(req, res, next) {
     .catch(next);
 }
 
-function commentCreate(req, res, next) {
-  req.body.author = req.currentUser;
-  Comment.create(req.body)
-    .then(comment => res.json(comment))
-    .catch(next);
-}
-
 
 module.exports= {
   getRecipesByIngredients,
   getRecipeById,
-  autocomplete,
-  commentCreate
+  autocomplete
 };
