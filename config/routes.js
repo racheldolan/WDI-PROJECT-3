@@ -6,7 +6,7 @@ const Comment = require('../controllers/comments');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/recipes')
-  .get(spoonacular.getRecipesByIngredients);
+  .get(spoonacular.getRecipesByComplexSearch);
 router.route('/recipes/:id')
   .get(spoonacular.getRecipeById);
 

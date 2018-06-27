@@ -1,6 +1,19 @@
 <!-- SEARCH BAR -->
 <form ng-submit="search()">
   <div class=section>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Select Diet</option>
+          <option>Lacto Vegetarian</option>
+          <option>Paleo</option>
+          <option>Pescetarian</option>
+          <option>Primal</option>
+          <option>Ovo Vegetarian</option>
+          <option>Vegetarian</option>
+        </select>
+      </div>
+    </div>
     <input ng-model="ingredient" ng-change="autoSearch()" id="ingredients" autocomplete="off" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
 
     <ul ng-if="suggestions.length > 0">
