@@ -1,23 +1,19 @@
 <section class="user-show">
-
-<article class="media-profileInfo">
-  <figure class="media-left">
-   <p class="image is-128x128">
-     <img src="{{ user.image }}" alt="{{ user.username }}">
-   </p>
- </figure>
- <div class="media-content">
-   <div class="content">
-     <p>
-       <h5 class="subtitle">{{ user.username }}</h5>
-       <br>
-       <h5>Tell us about yourself here:</h5>
-       <p>{{ user.bio }}</p>
-     </p>
-   </div>
- </div>
-</article>
-<article class="media-recipesFav">
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="image is-128x128">
+          <img src="{{ user.image }}" alt="{{ user.username }}">
+        </p>
+        <p>
+          <h5 class="subtitle">{{ user.username }}</h5>
+          <h5>Tell us about yourself here:</h5>
+          <p>{{ user.bio }}</p>
+        </p>
+      </div>
+    </div>
+  </section>
+  <article class="media-recipesFav">
     <p>Favourite Recipes</p>
     <div class="columns is-multiline">
       <div class="column is-quarter-desktop" ng-repeat="favourite in user.favourites">
@@ -27,8 +23,7 @@
         <button class="button is-danger" ng-click="deleteFavourite()">Delete Favourite</button>
       </div>
     </div>
-  </div>
-<a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
-<button class="button is-danger" ng-click="deleteUser()">Delete</button>
-</article>
+    <a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
+    <button class="button is-danger" ng-click="deleteUser()">Delete</button>
+  </article>
 </section>
