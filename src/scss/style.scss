@@ -25,6 +25,7 @@
   max-width: 318px;
   background-color: #FF7D5D;
   // background-color: #57D09B;
+  z-index: 1;
 }
 
 .button-home-page {
@@ -48,16 +49,32 @@
   width: 1500px;
   height: 700px;
 }
-li:nth-child(4) {
+.logo {
+  width: 40px;
+}
+.main-title {
+  font-size: 30px;
+  color: black;
+  z-index: 2;
+  padding-top: 60%;
+}
+
+a.navbar-item:hover, .navbar-link:hover {
+  background-color: #57D09B;
+  color: white;
+  text-decoration: none;
+}
+
+#one {
   animation: xfade 16s 0s infinite;
 }
-li:nth-child(3) {
+#two {
   animation: xfade 16s 4s infinite;
 }
-li:nth-child(2) {
+#three {
   animation: xfade 16s 8s infinite;
 }
-li:nth-child(1) {
+#four {
 animation: xfade 16s 12s infinite;
 }
 @keyframes xfade{
