@@ -29,6 +29,11 @@
     </div>
   </div>
   </nav>
+
+  <div class="notification is-{{flashMessage.type}} is-flash" ng-class="{ 'is-active': flashMessage }">
+    {{ flashMessage.content }}
+  </div>
+
   <ui-view></ui-view>
 </body>
 </html>
