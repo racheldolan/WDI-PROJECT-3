@@ -1,3 +1,19 @@
+@import '~bulma';
+@import 'components/footer';
+@import 'components/home';
+@import 'components/nav';
+@import 'components/login';
+@import 'components/register';
+@import 'components/profile';
+@import 'components/recipeIndex';
+@import 'components/recipeShow';
+
+@import 'helpers/variables';
+
+@import 'partials/base';
+@import 'partials/buttons';
+@import 'partials/fonts';
+@import 'partials/profileImage';
 
 .recipe-show {
   padding-left: 20px;
