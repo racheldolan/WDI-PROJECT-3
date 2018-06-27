@@ -46,18 +46,24 @@
     <div class="column is-half-desktop">
       <h4 class="title is-4">Comments</h4>
       <article class="media" ng-repeat="comment in recipe.comments">
+        <figure class="media-left">
+          <p class="image is-64x64">
+          <img src="{{ comment.author.image }}" alt="{{ comment.author.username }}">
+
+          </p>
+        </figure>
         <div class="media-content">
           <div class="content">
-            <strong>{{ user.username }}</strong>
-            <p>
-              {{ comment.content }}
-            </p>
+            <p><strong>{{ comment.author.username }}</strong></p>
+            <p>{{ comment.content }}</p>
           <small>{{ '⭐️'.repeat(comment.rating) }}</small>
+          </div>
           <button ng-click="deleteComment(comment)" type="submit" class="button is-small is-danger">Delete</button>
         </div>
+
       </article>
     </div>
-  <hr />
+    <hr />
     <form ng-submit="createComment()" ng-if="isAuthenticated()">
       <div class="field">
         <label class="label">Comment</label>
@@ -83,8 +89,7 @@
 
     </form>
 
-  </div>
-</div>
+    </div>
 
 
 </section>

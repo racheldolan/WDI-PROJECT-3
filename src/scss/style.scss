@@ -1,12 +1,9 @@
-body {
-  padding-top: 100px;
-}
 
 .recipe-show {
   padding-left: 20px;
   padding-right: 20px;
 }
-
+// flash message start
 .notification.is-flash {
   height: 0;
   opacity: 0;
@@ -21,3 +18,56 @@ body {
     padding: 1.25rem 2.5rem 1.25rem 1.5rem;
   }
 }
+// flash message end
+// home page animation start
+.home-page {
+  height: 700px;
+  max-width: 318px;
+  background-color: black;
+}
+
+.button-home-page {
+  margin-top: 70%;
+}
+
+.image-gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+}
+.list-item-in-gallery {
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+  // margin-top: 3%;
+}
+.image-in-gallery{
+  width: 1500px;
+  height: 700px;
+}
+li:nth-child(4) {
+  animation: xfade 16s 0s infinite;
+}
+li:nth-child(3) {
+  animation: xfade 16s 4s infinite;
+}
+li:nth-child(2) {
+  animation: xfade 16s 8s infinite;
+}
+li:nth-child(1) {
+animation: xfade 16s 12s infinite;
+}
+@keyframes xfade{
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+}
+// home page animation end

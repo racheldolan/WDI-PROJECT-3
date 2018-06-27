@@ -33,6 +33,13 @@ function RecipesIndexCtrl($scope, $http){
     $scope.ingredient = '';
     $scope.suggestions = [];
   };
+
+  $scope.deleteIngredient = function(ingredient){
+    const index = $scope.ingredients.indexOf(ingredient);
+    $scope.ingredients.splice(index, 1);
+  };
+
+
 }
 
 export default RecipesIndexCtrl;
