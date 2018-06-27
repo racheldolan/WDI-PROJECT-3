@@ -28,7 +28,12 @@
       <a class="navbar-item" ng-click="logout()" ng-if="isAuthenticated()">Logout</a>
     </div>
   </div>
-</nav>
+  </nav>
+
+  <div class="notification is-{{flashMessage.type}} is-flash" ng-class="{ 'is-active': flashMessage }">
+    {{ flashMessage.content }}
+  </div>
+
   <ui-view></ui-view>
 </body>
 </html>
