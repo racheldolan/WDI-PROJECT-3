@@ -10,7 +10,6 @@ mongoose.connect(dbURI);
 
 const routes = require('./config/routes');
 
-
 app.use(express.static(`${__dirname}/public`));
 
 app.use(bodyParser.json());

@@ -2,15 +2,17 @@
 <form ng-submit="search()">
   <div class=section>
     <div class="control">
-      <div class="select">
-        <select>
-          <option>Select Diet</option>
-          <option>Lacto Vegetarian</option>
-          <option>Paleo</option>
-          <option>Pescetarian</option>
-          <option>Primal</option>
-          <option>Ovo Vegetarian</option>
-          <option>Vegetarian</option>
+      <div class="select" >
+        <select ng-model="diet">
+          <option selected disabled>Select Diet</option>
+          <option value="">No Diet</option>
+          <option value="lactovegetarian">Lacto Vegetarian</option>
+          <option value="paleo">Paleo</option>
+          <option value="pescetarian">Pescetarian</option>
+          <option value="primal">Primal</option>
+          <option value="ovovegetarian">Ovo Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="vegetarian">Vegetarian</option>
         </select>
       </div>
     </div>

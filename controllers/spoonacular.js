@@ -5,7 +5,6 @@ const Comment = require('../models/comment');
 
 
 function getRecipesByComplexSearch(req, res, next) {
-  const userInput = req.query.ingredients;
   const { diet } = req.query;
   rp({
     method: 'GET',
@@ -14,7 +13,7 @@ function getRecipesByComplexSearch(req, res, next) {
       number: 15,
       ranking: 2,
       fillIngredients: true,
-      ingredients: userInput,
+      includeIngredients: req.query.ingredients,
       diet
     },
     headers: {
