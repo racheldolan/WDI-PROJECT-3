@@ -1,3 +1,20 @@
+@import '~bulma';
+@import 'components/footer';
+@import 'components/home';
+@import 'components/nav';
+@import 'components/login';
+@import 'components/register';
+@import 'components/profile';
+@import 'components/recipeIndex';
+@import 'components/recipeShow';
+
+@import 'helpers/variables';
+
+@import 'partials/base';
+@import 'partials/buttons';
+@import 'partials/typography';
+@import 'partials/profileImage';
+
 .user-show {
   padding-top: 100px;
   padding-left: 20px;
@@ -33,7 +50,8 @@
 .home-page {
   height: 700px;
   max-width: 318px;
-  background-color: black;
+  background-color: #FF7D5D;
+  // background-color: #57D09B;
 }
 
 .button-home-page {
