@@ -4,6 +4,28 @@ const spoonacular ='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com';
 const Comment = require('../models/comment');
 
 
+function getRecipesByComplexSearch(req, res, next) {
+  const userInput = req.query.ingredients;
+  const { diet } = req.query;
+  rp({
+    method: 'GET',
+    url: `${spoonacular}/recipes/searchComplex`,
+    qs: {
+      number: 15,
+      ranking: 2,
+      fillIngredients: true,
+      ingredients: userInput,
+      diet
+    },
+    headers: {
+      'x-mashape-key': spoonKey
+    },
+    json: true
+  })
+    .then(data => res.json(data.results))
+    .catch(next);
+}
+
 // index route function
 function getRecipesByIngredients(req, res, next) {
   const userInput = req.query.ingredients;
@@ -68,6 +90,7 @@ function autocomplete(req, res, next) {
 
 
 module.exports= {
+  getRecipesByComplexSearch,
   getRecipesByIngredients,
   getRecipeById,
   autocomplete
