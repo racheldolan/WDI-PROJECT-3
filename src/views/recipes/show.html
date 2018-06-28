@@ -16,14 +16,21 @@
         <div class="media">
           <div class="media-content">
             <p class="title is-4">{{ recipe.title }}</p>
+            <p class="subtitle is-6" ng-repeat="cuisine in recipe.cuisines">Cusine(s): {{ cuisine }}</p>
             <p class="subtitle is-6">Cooking time: {{ recipe.readyInMinutes}} minutes</p>
             <p class="subtitle is-6">Serves: {{ recipe.servings}}</p>
-            <p class="subtitle is-6" ng-bind-html="recipe.diets"></p>
-            <p class="subtitle is-6">Missing Ingredients:</p>
+            <p><strong>Paired Wines: </strong></p>
+            <p class="subtitle is-6" ng-bind-html="recipe.winePairing.pairedWines"></p>
+            <p><strong>Diet: </strong></p>
+            <ul>
+            <li ng-repeat="diet in recipe.diets">{{ diet }}</li>
+            </ul>
+            <p class="subtitle is-6"><strong>Missing Ingredients:</strong></p>
             <ul>
             <li ng-repeat="ingredient in recipe.extendedIngredients">{{ ingredient.name }}</li>
           </ul>
         </div>
+
 
           <div class="buttons">
           <button class="button is-primary" ng-click="createFavourite(recipe)">Favourite this recipe<i class="far fa-heart"></i></button>
@@ -34,7 +41,7 @@
   </div>
 
 
-  <div class="column">
+  <div class="column is-half-desktop">
     <div class="media-content">
       <h1 class="title">Instructions</h1>
       <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
@@ -61,7 +68,7 @@
       </div>
 
     </article>
-  </div>
+
   <hr />
   <form ng-submit="createComment()" ng-if="isAuthenticated()">
     <div class="field">
@@ -87,7 +94,7 @@
     <button class="button is-primary">Submit</button>
 
   </form>
-
+</div>
 </div>
 
 
