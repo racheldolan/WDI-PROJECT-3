@@ -13,9 +13,8 @@
         <button class="button favourite-button" ng-click="createFavourite(recipe)">Favourite this recipe <i class="far fa-heart"></i></button>
         <a class="button" ui-sref="recipesIndex">Back to Search</a>
       </div>
-
     </div>
-
+    <div class="columns">
     <div class="column is-two-thirds-desktop is-half-mobile recipe-info">
       <div class="card-content">
         <div class="media">
@@ -31,14 +30,18 @@
             <ul>
               <li ng-repeat="diet in recipe.diets">{{ diet }}</li>
             </ul>
-            <p><strong>Missing Ingredients:</strong></p>
-            <ul>
-              <li ng-repeat="ingredient in recipe.extendedIngredients">{{ ingredient.name }}</li>
-            </ul>
+            <div class="column">
+              <p><strong>Missing Ingredients:</strong></p>
+              <ul>
+                <li ng-repeat="ingredient in recipe.extendedIngredients">{{ ingredient.name }}</li>
+              </ul>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </div>
+
 
     <div class="columns">
       <div class="column is-half-desktop is-half-mobile">
