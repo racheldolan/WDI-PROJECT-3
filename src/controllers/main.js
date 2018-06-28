@@ -1,12 +1,19 @@
 function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.navbarOpen = false;
+  $scope.navbarHome = false;
 
+  // toggles a class on the navbar to change background color
   $transitions.onSuccess({}, () => {
-    $scope.navbarOpen = false;
+    // $scope.navbarOpen = false;
+    $scope.navbarHome = true;
     $scope.isHomepage = $state.$current.name === 'home';
+    if($scope.isHomepage){
+      $scope.navbarHome = !$scope.navbarHome;
+    } else {
+      $scope.navbarHome;
+    }
   });
-
 
   if($auth.isAuthenticated()) $scope.currentUserId = $auth.getPayload().sub;
 
