@@ -5,7 +5,9 @@ function UsersShowCtrl($scope, $http, $state,$auth){
   })
     .then(res => {
       $scope.user = res.data;
+
     });
+    
   $scope.deleteUser = function() {
     $http({
       method: 'DELETE',
