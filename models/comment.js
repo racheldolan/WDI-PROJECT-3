@@ -8,11 +8,4 @@ const commentSchema = new mongoose.Schema({
   approved: { type: Boolean, default: false }
 });
 
-commentSchema.virtual('avgRating')
-  .get(function() {
-    return Math.floor(this.comments.reduce((sum, comment) => {
-      return sum + comment.rating;
-    }, 0) / this.comments.length);
-  });
-
 module.exports = mongoose.model( 'Comment', commentSchema);

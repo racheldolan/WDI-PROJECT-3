@@ -48,6 +48,11 @@ function RecipesShowCtrl($scope, $http, $state, $auth, $rootScope){
 
       });
   };
+
+  $scope.isCommentOwner = function(comment) {
+    if(comment.author._id === $auth.getPayload().sub) return true;
+    return false;
+  };
 }
 
 export default RecipesShowCtrl;
