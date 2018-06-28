@@ -28,10 +28,28 @@
         <a ui-sref="recipesShow({ id: favourite.id })">
           <bulma-card image="favourite.image" title="favourite.title"></bulma-card>
         </a>
-        <button class="button is-danger" ng-click="deleteFavourite()">Delete Favourite</button>
+        <button class="button is-danger" ng-click="deleteFavourite(favourite)">Delete Favourite</button>
       </div>
     </div>
     <a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
     <button class="button is-danger" ng-click="deleteUser()">Delete</button>
   </article>
 </section>
+<a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
+<button class="button is-danger toggle-modal" ng-click="toggleModal()" ng-class="{ 'is-active': modalOpen }">Delete</button>
+
+<!-- modal to make sure user wants to delete their profile -->
+<div class="modal" ng-class="{ 'is-active': modalOpen }">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+    </header>
+    <section class="modal-card-body">
+      Are you sure you want to delete your profile?
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" ng-click="deleteUser()">Delete</button>
+      <button class="button toggle-modal-cancel" ng-click="toggleModal()" ng-class="{ 'is-active': modalOpen }">Cancel</button>
+    </footer>
+  </div>
+</div>

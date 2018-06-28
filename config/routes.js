@@ -10,12 +10,9 @@ router.route('/recipes')
 router.route('/recipes/:id')
   .get(spoonacular.getRecipeById);
 
-router.route('/recipes/:id/favourites')
-  .post(secureRoute, Users.createFavourite);
+router.put('/users/:id/favourites', secureRoute, Users.createFavourite);
+router.put('/users/:id/favourites/delete', secureRoute, Users.deleteFavourite);
 //deletefavouriterecipe
-
-router.route('/profile')
-  .get(secureRoute, Users.profile);
 
 router.get('/autocomplete', spoonacular.autocomplete);
 
@@ -32,5 +29,8 @@ router.route('/comments')
 
 router.route('/comments/:id')
   .delete(secureRoute, Comment.commentDelete);
+
+router.route('/comments/:id')
+  .patch(secureRoute, Comment.commentModerate);
 
 module.exports = router;
