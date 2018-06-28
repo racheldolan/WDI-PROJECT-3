@@ -1,10 +1,12 @@
 .footer{
   color: white;
-  background-color: $accentColour;
+  background-color: $quinary;
+  font-family: $font-primary;
   i{
     color: white;
   }
   h1{
-    font-family: $font-primary;
+    font-family: $font-secondary;
+    color: white;
   }
 }
