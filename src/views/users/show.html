@@ -18,10 +18,10 @@
   </div>
 </section>
 <a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
-<button class="button is-danger toggle-modal" ng-click="toggleModal()">Delete</button>
+<button class="button is-danger toggle-modal" ng-click="toggleModal()" ng-class="{ 'is-active': modalOpen }">Delete</button>
 
 <!-- modal to make sure user wants to delete their profile -->
-<div class="modal">
+<div class="modal" ng-class="{ 'is-active': modalOpen }">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
@@ -31,7 +31,7 @@
     </section>
     <footer class="modal-card-foot">
       <button class="button is-success" ng-click="deleteUser()">Delete</button>
-      <button class="button toggle-modal-cancel" ng-click="toggleModal()">Cancel</button>
+      <button class="button toggle-modal-cancel" ng-click="toggleModal()" ng-class="{ 'is-active': modalOpen }">Cancel</button>
     </footer>
   </div>
 </div>
