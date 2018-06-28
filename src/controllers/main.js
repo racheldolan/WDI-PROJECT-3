@@ -1,6 +1,6 @@
 function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
   $scope.isAuthenticated = $auth.isAuthenticated;
-  $scope.currentUser = null;
+  // $scope.currentUser = null;
   $scope.navbarOpen = false;
   $scope.navbarHome = false;
 

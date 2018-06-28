@@ -9,7 +9,6 @@ function RecipesShowCtrl($scope, $http, $state, $auth, $rootScope){
 
 
   $scope.createComment = function() {
-    console.log($scope.content);
     $http({
       method: 'POST',
       url: '/api/comments',

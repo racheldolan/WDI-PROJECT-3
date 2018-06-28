@@ -5,7 +5,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-family: 'Swanky and Moo Moo', cursive;
+  $font-primary:'Roboto', sans-serif;
   font-size: 25px;
 }
 
@@ -34,7 +34,6 @@
 //sytle entire fav section
 .media-recipesFav {
   padding: 40px;
-  border: solid red 1px;
 }
 
 .media-recipesFav h2 {
@@ -42,18 +41,16 @@
 }
 
 .media-recipesFav img {
-  border: solid red 1px;
-  padding: 20px;
   position: absolute;
 }
 
 .card-content {
-  border: solid red 1px;
-  padding: 20px;
+  padding: 10px;
 }
 
-// .card {
-//   background-color: grey;
-//   max-width: 400px;
-//   max-height: 300px;
-// }
+.title {
+  max-height: 50px;
+  min-height: 100px;
+  padding: 5px;
+
+}
