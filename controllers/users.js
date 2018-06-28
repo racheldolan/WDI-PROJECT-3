@@ -22,28 +22,30 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+
 function profile(req, res) {
   return res.json(req.currentUser);
 }
 
 function createFavouriteRoute(req, res, next) {
-  req.currentUser.favourites.push(req.body);
-  req.currentUser.save()
+  User.findById(req.currentUser._id)
+    .then(user => {
+      user.favourites.push(req.body);
+      user.save();
+    })
     .then(user => res.json(user))
     .catch(next);
 }
-// abandoned for now
+
 function deleteFavouriteRoute(req, res, next) {
-  return User.findById(req.currentUser._id)
+  User.findById(req.currentUser._id)
     .then(user => {
-      user.favourites = user.favourites.filter(favourite => !favourite.equals(req.params.id));
-      return user.save();
+      user.favourites = req.body.favourites;
+      user.save();
     })
-    .then(user => res.status(201).json(user))
+    .then(user => res.json(user))
     .catch(next);
 }
-
-
 
 module.exports = {
   show: showRoute,

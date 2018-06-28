@@ -15,12 +15,16 @@ function UsersShowCtrl($scope, $http, $state){
       .then(() => $state.go('home'));
   };
 
-  $scope.deleteFavourite = function() {
+  $scope.deleteFavourite = function(favourite) {
+    const index = $scope.user.favourites.indexOf(favourite);
+    $scope.user.favourites.splice(index, 1);
     $http({
-      method: 'DELETE',
-      url: `/api/users/${$state.params.id}/favourites`
+      method: 'PUT',
+      url: `/api/users/${$state.params.id}/favourites/delete`,
+      data: $scope.user
     })
-      .then(() => $state.go('profile'));
+      .then(() => {
+      });
   };
 
 
@@ -41,6 +45,5 @@ function UsersShowCtrl($scope, $http, $state){
 
 
 }
-
 
 export default UsersShowCtrl;
