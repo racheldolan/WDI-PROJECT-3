@@ -1,6 +1,6 @@
 
 .hero-body {
-  background-color: $primary;
+  background-color: #FF7D5D;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -20,6 +20,14 @@
   border-radius: 50%;
   background-color: white;
 
+}
 
+.media-content-image img {
+  background-color: red;
+  align-items: center;
+}
+
+.media-content {
+  
 
 }

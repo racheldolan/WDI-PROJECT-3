@@ -1,16 +1,24 @@
 <section class="user-show">
   <section class="hero is-primary">
     <div class="hero-body">
-      <div class="container has-text-centered">
-        <p class="image is-128x128">
-          <img src="{{ user.image }}" alt="{{ user.username }}">
-        </p>
-        <p>
-          <h5 class="subtitle">{{ user.username }}</h5>
-          <h5>Tell us about yourself here:</h5>
-          <p>{{ user.bio }}</p>
-        </p>
+      <!-- <div class="container has-text-centered"> -->
+      <article class="media">
+        <figure class="media-content-image">
+          <p class="image is-128x128">
+            <img src="{{ user.image }}" alt="{{ user.username }}">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <h5 class="subtitle">{{ user.username }}</h5>
+              <h5>Tell us about yourself here:</h5>
+              <p>{{ user.bio }}</p>
+            </p>
+          </div>
+        <!-- </div> -->
       </div>
+    </article>
     </div>
   </section>
   <article class="media-recipesFav">
