@@ -19,10 +19,14 @@
         <!-- </div> -->
       </div>
     </article>
+    <div class="media-right">
+      <a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
+      <button class="button is-danger toggle-modal" ng-click="toggleModal()" ng-class="{ 'is-active': modalOpen }">Delete</button>
+    </div>
     </div>
   </section>
   <article class="media-recipesFav">
-    <p>Favourite Recipes</p>
+    <h2>Favourite Recipes</h2>
     <div class="columns is-multiline">
       <div class="column is-quarter-desktop" ng-repeat="favourite in user.favourites">
         <a ui-sref="recipesShow({ id: favourite.id })">
@@ -31,12 +35,8 @@
         <button class="button is-danger" ng-click="deleteFavourite(favourite)">Delete Favourite</button>
       </div>
     </div>
-    <a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
-    <button class="button is-danger" ng-click="deleteUser()">Delete</button>
   </article>
 </section>
-<a class="button is-primary" ui-sref="usersEdit({ id: user._id })">Edit</a>
-<button class="button is-danger toggle-modal" ng-click="toggleModal()" ng-class="{ 'is-active': modalOpen }">Delete</button>
 
 <!-- modal to make sure user wants to delete their profile -->
 <div class="modal" ng-class="{ 'is-active': modalOpen }">
