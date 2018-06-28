@@ -1,4 +1,5 @@
 function UsersShowCtrl($scope, $http, $state){
+
   $http({
     method: 'GET',
     url: `/api/users/${$state.params.id}`
@@ -25,6 +26,24 @@ function UsersShowCtrl($scope, $http, $state){
       .then(() => {
       });
   };
+
+
+  $scope.toggleModal = function(){
+    $scope.modalOpen = !$scope.modalOpen;
+  };
+
+  // $scope.toggleModal = function() {
+  //
+  //   button.addEventListener('click', function() {
+  //     modal.classList.toggle('is-active');
+  //   });
+  //   buttonCancel.addEventListener('click', function(){
+  //     modal.classList.toggle('is-active');
+  //   });
+  // };
+
+
+
 }
 
 export default UsersShowCtrl;

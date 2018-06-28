@@ -7,6 +7,7 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
     $scope.isHomepage = $state.$current.name === 'home';
   });
 
+
   if($auth.isAuthenticated()) $scope.currentUserId = $auth.getPayload().sub;
 
 

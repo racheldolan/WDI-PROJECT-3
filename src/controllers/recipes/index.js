@@ -1,15 +1,19 @@
 function RecipesIndexCtrl($scope, $http){
   $scope.ingredient = '';
   $scope.ingredients = [];
+  $scope.diet = '';
 
   $scope.suggestions = [];
-
+  $scope.sort = 'likes';
   $scope.search = function() {
-
+    console.log($scope.diet);
     $http({
       method: 'GET',
       url: '/api/recipes',
-      params: { ingredients: $scope.ingredients.join(',') }
+      params: {
+        ingredients: $scope.ingredients.join(','),
+        diet: $scope.diet
+      }
     })
       .then(res => $scope.recipes = res.data);
   };
