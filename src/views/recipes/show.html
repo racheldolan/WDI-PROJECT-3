@@ -1,6 +1,6 @@
 <section class="recipe-show">
   <div class="columns is-mobile is-multiline">
-    <div class="column is-one-third-desktop is-half-mobile recipe-image">
+    <div class="column is-half-desktop is-half-mobile recipe-image">
 
       <div class="card">
         <div class="card-image">
@@ -9,13 +9,9 @@
           </figure>
         </div>
       </div>
-      <div class="buttons">
-        <button class="button favourite-button" ng-click="createFavourite(recipe)">Favourite this recipe <i class="far fa-heart"></i></button>
-        <a class="button" ui-sref="recipesIndex">Back to Search</a>
-      </div>
     </div>
-    <div class="columns">
-    <div class="column is-two-thirds-desktop is-half-mobile recipe-info">
+
+    <div class="column is-half-desktop is-half-mobile recipe-info">
       <div class="card-content">
         <div class="media">
           <div class="media-content">
@@ -30,30 +26,29 @@
             <ul>
               <li ng-repeat="diet in recipe.diets">{{ diet }}</li>
             </ul>
-            <div class="column">
-              <p><strong>Missing Ingredients:</strong></p>
-              <ul>
-                <li ng-repeat="ingredient in recipe.extendedIngredients">{{ ingredient.name }}</li>
-              </ul>
-            </div>
+            <hr />
+              <p><strong>Missing Ingredients: </strong>{{ recipe.extendedIngredients.length }} </p>
           </div>
+          </div>
+          <div class="buttons">
+            <button class="button favourite-button" ng-click="createFavourite(recipe)">Favourite this recipe <i class="far fa-heart"></i></button>
+            <a class="button is-danger" ui-sref="recipesIndex">Back to Search</a>
           </div>
         </div>
       </div>
-    </div>
 
 
     <div class="columns">
-      <div class="column is-half-desktop is-half-mobile">
+      <div class="column is-half-desktop is-mobile recipe-instructions">
         <div class="media-content">
           <h1 class="title is-4">Instructions</h1>
           <hr />
-          <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
+          <p class="subtitle is-6 instructions" ng-bind-html="recipe.instructions"></p>
         </div>
       </div>
 
 
-      <div class="column is-half-desktop is-half-mobile">
+      <div class="column is-half-desktop is-mobile recipe-comments">
         <h4 class="title is-4">Comments</h4>
         <article class="media" ng-repeat="comment in recipe.comments">
           <figure class="media-left">
@@ -70,7 +65,7 @@
             </div>
           </div>
           <div class="media-right">
-            <button ng-if="isAuthenticated()" ng-click="deleteComment(comment)" type="submit" class="delete">Delete</button>
+            <button ng-if="isCommentOwner(comment)" ng-click="deleteComment(comment)" type="submit" class="delete">Delete</button>
           </div>
         </article>
 

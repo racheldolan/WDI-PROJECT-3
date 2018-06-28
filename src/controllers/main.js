@@ -19,6 +19,7 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
   if($auth.isAuthenticated()) $scope.currentUserId = $auth.getPayload().sub;
 
 
+
   $rootScope.$on('flashMessage', (e, data) => {
     $scope.flashMessage = data;
 
