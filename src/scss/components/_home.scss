@@ -1,22 +1,7 @@
 // home page animation start
-.home-page {
-  height: 700px;
-  max-width: 318px;
-  background-color: $primary;
-  // background-color: #57D09B;
-  z-index: 1;
+.homepage{
+  background-color: $quinary
 }
-
-.button-home-page {
-  margin-left: 18%;
-  width: 200px;
-  background-color: $secondary;
-  font-family: $font-secondary;
-  font-size: 30px;
-  border: none;
-  color: $tertiary;
-}
-
 .image-gallery {
   list-style: none;
   margin: 0;
@@ -26,12 +11,11 @@
 }
 .list-item-in-gallery {
   position: absolute;
-  left: 50%;
-  margin-left: -600px;
-  // margin-top: 3%;
+  background: $quinary;
+
 }
 .image-in-gallery{
-  width: 1500px;
+  width: 1600px;
   height: 700px;
 }
 .logo {
@@ -73,3 +57,27 @@ animation: xfade 16s 12s infinite;
   }
 }
 // home page animation end
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .footer{
+      display: none;
+    }
+}
+
+.hero-overlay{
+  color: white;
+  margin-top: 10%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 5%;
+  .hero-title{
+  font-size: 4rem;
+  font-family: $font-secondary;
+  }
+}
