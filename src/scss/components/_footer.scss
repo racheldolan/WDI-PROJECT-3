@@ -1,7 +1,10 @@
 .footer{
-  background-color: darkGrey;
-}
-
-i{
   color: white;
+  background-color: $accentColour;
+  i{
+    color: white;
+  }
+  h1{
+    font-family: $font-primary;
+  }
 }

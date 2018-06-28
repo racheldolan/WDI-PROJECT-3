@@ -1,10 +1,13 @@
+// @import '~bulma/sass/utilities/initial-variables';
+// @import '~bulma/sass/utilities/derived-variables';
 @import '~bulma';
+
 @import 'components/footer';
 @import 'components/home';
 @import 'components/nav';
 @import 'components/login';
-@import 'components/register';
 @import 'components/profile';
+@import 'components/register';
 @import 'components/recipeIndex';
 @import 'components/recipeShow';
 
@@ -12,8 +15,8 @@
 
 @import 'partials/base';
 @import 'partials/buttons';
-@import 'partials/typography';
 @import 'partials/profileImage';
+@import 'partials/typography';
 
 .recipe-show {
   padding-left: 20px;
