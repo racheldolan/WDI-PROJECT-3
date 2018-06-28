@@ -1,94 +1,101 @@
 <section class="recipe-show">
-  <div class="columns is-multiline">
-    <div class="column is-half-desktop">
+  <div class="columns is-mobile is-multiline">
+    <div class="column is-half-desktop is-half-mobile recipe-image">
 
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
-            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            <img class="recipe" ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
           </figure>
         </div>
       </div>
     </div>
 
-  <div class="column is-half-desktop">
+    <div class="column is-half-desktop is-half-mobile recipe-info">
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <p class="title is-4">{{ recipe.title }}</p>
+            <p class="title">{{ recipe.title }}</p>
+            <p class="subtitle is-6" ng-repeat="cuisine in recipe.cuisines">Cuisine(s): {{ cuisine }}</p>
             <p class="subtitle is-6">Cooking time: {{ recipe.readyInMinutes}} minutes</p>
             <p class="subtitle is-6">Serves: {{ recipe.servings}}</p>
-            <p class="subtitle is-6" ng-bind-html="recipe.diets"></p>
-            <p class="subtitle is-6">Missing Ingredients:</p>
+            <hr />
+            <p><strong>Paired Wines: </strong></p>
+            <p class="subtitle is-6" ng-bind-html="recipe.winePairing.pairedWines"></p>
+            <p><strong>Diet: </strong></p>
             <ul>
-            <li ng-repeat="ingredient in recipe.extendedIngredients">{{ ingredient.name }}</li>
-          </ul>
-        </div>
-
+              <li ng-repeat="diet in recipe.diets">{{ diet }}</li>
+            </ul>
+            <hr />
+              <p><strong>Missing Ingredients: </strong>{{ recipe.extendedIngredients.length }} </p>
+          </div>
+          </div>
           <div class="buttons">
-          <button class="button is-primary" ng-click="createFavourite(recipe)">Favourite this recipe<i class="far fa-heart"></i></button>
-            <a class="button" ui-sref="recipesIndex">Back to Search</a>
+            <button class="button favourite-button" ng-click="createFavourite(recipe)">Favourite this recipe <i class="far fa-heart"></i></button>
+            <a class="button is-danger" ui-sref="recipesIndex">Back to Search</a>
+          </div>
         </div>
+      </div>
+
+
+    <div class="columns">
+      <div class="column is-half-desktop is-mobile recipe-instructions">
+        <div class="media-content">
+          <h1 class="title is-4">Instructions</h1>
+          <hr />
+          <p class="subtitle is-6 instructions" ng-bind-html="recipe.instructions"></p>
+        </div>
+      </div>
+
+
+      <div class="column is-half-desktop is-mobile recipe-comments">
+        <h4 class="title is-4">Comments</h4>
+        <article class="media" ng-repeat="comment in recipe.comments">
+          <figure class="media-left">
+            <p class="image is-64x64">
+              <img src="{{ comment.author.image }}" alt="{{ comment.author.username }}">
+
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p><strong>{{ comment.author.username }}</strong></p>
+              <p>{{ comment.content }}</p>
+              <small>{{ '⭐️'.repeat(comment.rating) }}</small>
+            </div>
+          </div>
+          <div class="media-right">
+            <button ng-if="isCommentOwner(comment)" ng-click="deleteComment(comment)" type="submit" class="delete">Delete</button>
+          </div>
+        </article>
+
+        <hr />
+        <form class="comment-field" ng-submit="createComment()" ng-if="isAuthenticated()">
+          <div class="field">
+            <label class="label">Comment</label>
+            <textarea class="textarea" ng-model="data.content"></textarea>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <label class="label">Rating</label>
+              <div class="select">
+                <select ng-model="data.rating">
+                  <option value="">Please select</option>
+                  <option value="1">⭐️</option>
+                  <option value="2">⭐️⭐️</option>
+                  <option value="3">⭐️⭐️⭐️</option>
+                  <option value="4">⭐️⭐️⭐️⭐️</option>
+                  <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="button is-primary">Submit</button>
+
+        </form>
       </div>
     </div>
   </div>
-
-
-  <div class="column">
-    <div class="media-content">
-      <h1 class="title">Instructions</h1>
-      <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
-    </div>
-  </div>
-
-
-  <div class="column is-half-desktop">
-    <h4 class="title is-4">Comments</h4>
-    <article class="media" ng-repeat="comment in recipe.comments">
-      <figure class="media-left">
-        <p class="image is-64x64">
-          <img src="{{ comment.author.image }}" alt="{{ comment.author.username }}">
-
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p><strong>{{ comment.author.username }}</strong></p>
-          <p>{{ comment.content }}</p>
-          <small>{{ '⭐️'.repeat(comment.rating) }}</small>
-        </div>
-        <button ng-click="deleteComment(comment)" type="submit" class="button is-small is-danger">Delete</button>
-      </div>
-
-    </article>
-  </div>
-  <hr />
-  <form ng-submit="createComment()" ng-if="isAuthenticated()">
-    <div class="field">
-      <label class="label">Comment</label>
-      <textarea class="textarea" ng-model="data.content"></textarea>
-    </div>
-
-    <div class="field">
-      <div class="control">
-        <label class="label">Rating</label>
-        <div class="select">
-          <select ng-model="data.rating">
-            <option value="">Please select</option>
-            <option value="1">⭐️</option>
-            <option value="2">⭐️⭐️</option>
-            <option value="3">⭐️⭐️⭐️</option>
-            <option value="4">⭐️⭐️⭐️⭐️</option>
-            <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <button class="button is-primary">Submit</button>
-
-  </form>
-
-</div>
-
 
 </section>

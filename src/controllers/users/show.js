@@ -37,18 +37,6 @@ function UsersShowCtrl($scope, $http, $state,$auth){
     $scope.modalOpen = !$scope.modalOpen;
   };
 
-  // $scope.toggleModal = function() {
-  //
-  //   button.addEventListener('click', function() {
-  //     modal.classList.toggle('is-active');
-  //   });
-  //   buttonCancel.addEventListener('click', function(){
-  //     modal.classList.toggle('is-active');
-  //   });
-  // };
-
-
-
 }
 
 export default UsersShowCtrl;

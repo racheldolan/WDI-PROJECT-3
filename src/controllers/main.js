@@ -5,7 +5,8 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
 
   // toggles a class on the navbar to change background color
   $transitions.onSuccess({}, () => {
-    // $scope.navbarOpen = false;
+    $scope.navbarOpen = false;
+    window.scrollTo(0,0);
     $scope.navbarHome = true;
     $scope.isHomepage = $state.$current.name === 'home';
     if($scope.isHomepage){
@@ -16,6 +17,7 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
   });
 
   if($auth.isAuthenticated()) $scope.currentUserId = $auth.getPayload().sub;
+
 
 
   $rootScope.$on('flashMessage', (e, data) => {
