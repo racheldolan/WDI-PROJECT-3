@@ -2,28 +2,27 @@
 //header for profile page - user info
 .hero-body {
   background-color: #57D09B;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  $font-primary:'Roboto', sans-serif;
-  font-size: 25px;
+  $font-secondary:'Leckerli One', cursive;
+  font-size: 16px;
 }
 
+
+//styling for the profile pic, username and bio
+
 .hero-body .image img {
-  margin-top: 50px;
   border: solid grey 1px;
   border-radius: 50%;
   background-color: white;
 }
-
-//styling for the profile pic, username and bio
-.media-content-image img {
-  background-color: red;
-  align-items: center;
-}
-
 .media-content {
-  max-width: 400px;
+  text-align: center;
+  // background: red;
+}
+//style for the profile pic although not responsive
+.media-content-image {
+  padding-left: 45%;
+  // width: 130px;
+  // padding-left: 565px;
 }
 
 //sytling for the edit and delete button placement
@@ -38,6 +37,7 @@
 
 .media-recipesFav h2 {
   font-size: 18px;
+  padding-bottom: 0px;
 }
 
 .media-recipesFav img {
