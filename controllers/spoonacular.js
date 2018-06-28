@@ -14,7 +14,8 @@ function getRecipesByComplexSearch(req, res, next) {
       ranking: 2,
       fillIngredients: true,
       includeIngredients: req.query.ingredients,
-      diet
+      diet,
+      instructionsRequired: true
     },
     headers: {
       'x-mashape-key': spoonKey
@@ -71,6 +72,7 @@ function getRecipeById(req, res, next) {
 }
 
 function autocomplete(req, res, next) {
+
   rp({
     method: 'GET',
     url: `${spoonacular}/food/ingredients/autocomplete`,

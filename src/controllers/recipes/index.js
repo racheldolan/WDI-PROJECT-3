@@ -2,11 +2,11 @@ function RecipesIndexCtrl($scope, $http){
   $scope.ingredient = '';
   $scope.ingredients = [];
   $scope.diet = '';
-
   $scope.suggestions = [];
   $scope.sort = 'likes';
+  
   $scope.search = function() {
-    console.log($scope.diet);
+
     $http({
       method: 'GET',
       url: '/api/recipes',

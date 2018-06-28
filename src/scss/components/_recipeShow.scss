@@ -1,9 +1,24 @@
+
 .recipe-show {
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 70px;
+  padding-top: 50px;
+  font-family: $font-primary;
 }
-// comment box 
+
+// comment box
 .field {
   padding: 0px;
+}
+
+.comment-field {
+  margin-bottom: 20px;
+}
+
+.favourite-button {
+  background-color: $secondary;
+}
+
+.recipe-info, .recipe-image {
+  ;
 }

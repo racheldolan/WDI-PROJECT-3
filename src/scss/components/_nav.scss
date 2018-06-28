@@ -2,9 +2,23 @@ a.navbar-item:hover, .navbar-link:hover {
   background-color: #57D09B;
   color: white;
   text-decoration: none;
+
+}
+a.navbar-item, .navbar-link {
+  color: $tertiary;
 }
 
-// leave this in as figuring out how to change color when state changes
+.navbar-title {
+  margin-top: 10px;
+  margin-left: 230px;
+  color: $tertiary;
+}
+
+nav {
+  font-family: $font-secondary;
+  font-size: 30px;
+}
+
 .change-color {
   background-color: $primary;
 }
