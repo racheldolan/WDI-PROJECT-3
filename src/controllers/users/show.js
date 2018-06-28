@@ -18,15 +18,35 @@ function UsersShowCtrl($scope, $http, $state,$auth){
       });
   };
 
-  $scope.deleteFavourite = function() {
+  $scope.deleteFavourite = function(favourite) {
+    const index = $scope.user.favourites.indexOf(favourite);
+    $scope.user.favourites.splice(index, 1);
     $http({
-      method: 'DELETE',
-      url: `/api/users/${$state.params.id}/favourites`
+      method: 'PUT',
+      url: `/api/users/${$state.params.id}/favourites/delete`,
+      data: $scope.user
     })
-      .then(() => $state.go('profile'));
+      .then(() => {
+      });
   };
 
-}
 
+  $scope.toggleModal = function(){
+    $scope.modalOpen = !$scope.modalOpen;
+  };
+
+  // $scope.toggleModal = function() {
+  //
+  //   button.addEventListener('click', function() {
+  //     modal.classList.toggle('is-active');
+  //   });
+  //   buttonCancel.addEventListener('click', function(){
+  //     modal.classList.toggle('is-active');
+  //   });
+  // };
+
+
+
+}
 
 export default UsersShowCtrl;

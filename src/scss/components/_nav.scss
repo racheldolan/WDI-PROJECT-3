@@ -1,0 +1,10 @@
+a.navbar-item:hover, .navbar-link:hover {
+  background-color: #57D09B;
+  color: white;
+  text-decoration: none;
+}
+
+// leave this in as figuring out how to change color when state changes
+.change-color {
+  background-color: $primary;
+}

@@ -36,7 +36,7 @@ function RecipesShowCtrl($scope, $http, $state, $auth, $rootScope){
 
   $scope.createFavourite = function(recipe) {
     $http({
-      method: 'POST',
+      method: 'PUT',
       url: `/api/users/${$auth.getPayload().sub}/favourites`,
       data: recipe
     })

@@ -1,15 +1,15 @@
 <section class="recipe-show">
-<div class="columns is-multiline">
-  <div class="column is-half-desktop">
+  <div class="columns is-multiline">
+    <div class="column is-half-desktop">
 
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
-        </figure>
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img ng-src="{{ recipe.image }}" alt="{{ recipe.title }}">
+          </figure>
+        </div>
       </div>
     </div>
-  </div>
 
   <div class="column is-half-desktop">
       <div class="card-content">
@@ -31,65 +31,64 @@
         </div>
       </div>
     </div>
-</div>
-</div>
+  </div>
 
 
-      <div class="column">
-      <div class="media-content">
-        <h1 class="title">Instructions</h1>
-        <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
-      </div>
+  <div class="column">
+    <div class="media-content">
+      <h1 class="title">Instructions</h1>
+      <p class="subtitle is-6" ng-bind-html="recipe.instructions"></p>
     </div>
+  </div>
 
 
-    <div class="column is-half-desktop">
-      <h4 class="title is-4">Comments</h4>
-      <article class="media" ng-repeat="comment in recipe.comments">
-        <figure class="media-left">
-          <p class="image is-64x64">
+  <div class="column is-half-desktop">
+    <h4 class="title is-4">Comments</h4>
+    <article class="media" ng-repeat="comment in recipe.comments">
+      <figure class="media-left">
+        <p class="image is-64x64">
           <img src="{{ comment.author.image }}" alt="{{ comment.author.username }}">
 
-          </p>
-        </figure>
-        <div class="media-content">
-          <div class="content">
-            <p><strong>{{ comment.author.username }}</strong></p>
-            <p>{{ comment.content }}</p>
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p><strong>{{ comment.author.username }}</strong></p>
+          <p>{{ comment.content }}</p>
           <small>{{ '⭐️'.repeat(comment.rating) }}</small>
-          </div>
-          <button ng-click="deleteComment(comment)" type="submit" class="button is-small is-danger">Delete</button>
         </div>
-
-      </article>
-    </div>
-    <hr />
-    <form ng-submit="createComment()" ng-if="isAuthenticated()">
-      <div class="field">
-        <label class="label">Comment</label>
-        <textarea class="textarea" ng-model="data.content"></textarea>
+        <button ng-click="deleteComment(comment)" type="submit" class="button is-small is-danger">Delete</button>
       </div>
 
-      <div class="field">
-        <div class="control">
-          <label class="label">Rating</label>
-          <div class="select">
-            <select ng-model="data.rating">
-              <option value="">Please select</option>
-              <option value="1">⭐️</option>
-              <option value="2">⭐️⭐️</option>
-              <option value="3">⭐️⭐️⭐️</option>
-              <option value="4">⭐️⭐️⭐️⭐️</option>
-              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-            </select>
-          </div>
+    </article>
+  </div>
+  <hr />
+  <form ng-submit="createComment()" ng-if="isAuthenticated()">
+    <div class="field">
+      <label class="label">Comment</label>
+      <textarea class="textarea" ng-model="data.content"></textarea>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="label">Rating</label>
+        <div class="select">
+          <select ng-model="data.rating">
+            <option value="">Please select</option>
+            <option value="1">⭐️</option>
+            <option value="2">⭐️⭐️</option>
+            <option value="3">⭐️⭐️⭐️</option>
+            <option value="4">⭐️⭐️⭐️⭐️</option>
+            <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+          </select>
         </div>
       </div>
-      <button class="button is-primary">Submit</button>
-
-    </form>
-
     </div>
+    <button class="button is-primary">Submit</button>
+
+  </form>
+
+</div>
 
 
 </section>
