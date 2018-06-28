@@ -1,5 +1,4 @@
-function UsersShowCtrl($scope, $http, $state){
-
+function UsersShowCtrl($scope, $http, $state,$auth){
   $http({
     method: 'GET',
     url: `/api/users/${$state.params.id}`
@@ -12,7 +11,11 @@ function UsersShowCtrl($scope, $http, $state){
       method: 'DELETE',
       url: `/api/users/${$state.params.id}`
     })
-      .then(() => $state.go('home'));
+      .then(() => {
+        $auth.logout();
+        // localStorage.removeItem('currentUser');
+        $state.go('home');
+      });
   };
 
   $scope.deleteFavourite = function(favourite) {

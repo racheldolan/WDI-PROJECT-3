@@ -9,16 +9,19 @@ mongoose.connect(dbURI, (err, db) => {
   User.create([{
     username: 'rachel',
     email: 'rachel@rachel.com',
+    admin: true,
     password: 'rachel',
     passwordConfirmation: 'rachel'
   }, {
     username: 'natasha',
     email: 'natasha@natasha.com',
+    admin: true,
     password: 'natasha',
     passwordConfirmation: 'natasha'
   }, {
     username: 'linda',
     email: 'linda@linda.com',
+    admin: true,
     password: 'linda',
     passwordConfirmation: 'linda'
   }, {
@@ -29,6 +32,7 @@ mongoose.connect(dbURI, (err, db) => {
   }, {
     username: 'nic',
     email: 'nic@nic.com',
+    admin: true,
     password: 'nic',
     passwordConfirmation: 'nic'
   }, {

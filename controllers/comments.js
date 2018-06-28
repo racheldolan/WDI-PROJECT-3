@@ -14,7 +14,21 @@ function commentDelete(req, res, next) {
     .catch(next);
 }
 
+function commentModerate(req, res, next) {
+  if(!req.currentUser.admin){
+    return res.json({ message: 'Unauthorized' });
+  }
+  Comment.findById(req.params.id)
+    .then(comment => {
+      comment.approved = true;
+      return comment.save();
+    })
+    .then(comment => res.json(comment))
+    .catch(next);
+}
+
 module.exports = {
   commentCreate,
-  commentDelete
+  commentDelete,
+  commentModerate
 };

@@ -30,4 +30,7 @@ router.route('/comments')
 router.route('/comments/:id')
   .delete(secureRoute, Comment.commentDelete);
 
+router.route('/comments/:id')
+  .patch(secureRoute, Comment.commentModerate);
+
 module.exports = router;
