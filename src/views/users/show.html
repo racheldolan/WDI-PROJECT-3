@@ -26,15 +26,23 @@
     </div>
   </section>
   <article class="media-recipesFav">
-    <h2>Favourite Recipes</h2>
+    <h2 class="title">Favourite Recipes</h2>
+    <div class="container">
     <div class="columns is-multiline">
-      <div class="column is-quarter-desktop" ng-repeat="favourite in user.favourites">
-        <a ui-sref="recipesShow({ id: favourite.id })">
-          <bulma-card image="favourite.image" title="favourite.title"></bulma-card>
-        </a>
-        <button class="button is-danger" ng-click="deleteFavourite(favourite)">Delete Favourite</button>
+      <div class="column column is-one-quarter-desktop" ng-repeat="favourite in user.favourites">
+          <a ui-sref="recipesShow({ id: favourite.id })">
+            <div class="card">
+              <div class="card-image is-square">
+                <bulma-card image="favourite.image" title="favourite.title"></bulma-card>
+                <a class="delete is-large" ng-click="deleteFavourite(favourite)"></a>
+                <!-- <button class="button is-danger" ng-click="deleteFavourite(favourite)">Delete</button> -->
+              </div>
+            </div>
+          </a>
+        </div>
+
+        </div>
       </div>
-    </div>
   </article>
 </section>
 
