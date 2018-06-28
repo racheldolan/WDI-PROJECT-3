@@ -1,6 +1,7 @@
 // @import '~bulma/sass/utilities/initial-variables';
 // @import '~bulma/sass/utilities/derived-variables';
 @import '~bulma';
+@import 'helpers/variables';
 
 @import 'components/footer';
 @import 'components/home';
@@ -11,7 +12,6 @@
 @import 'components/recipeIndex';
 @import 'components/recipeShow';
 
-@import 'helpers/variables';
 
 @import 'partials/base';
 @import 'partials/buttons';
