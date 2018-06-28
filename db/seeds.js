@@ -32,6 +32,7 @@ mongoose.connect(dbURI, (err, db) => {
   }, {
     username: 'nic',
     email: 'nic@nic.com',
+    admin: true,
     password: 'nic',
     passwordConfirmation: 'nic'
   }, {
