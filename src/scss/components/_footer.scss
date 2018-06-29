@@ -2,12 +2,25 @@
   color: white;
   background-color: $quinary;
   font-family: $font-primary;
-
+  position: fixed;
+  display: block;
+  height: 2rem;
+  margin-bottom: 0;
+  // padding: 0 10px 0 10px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
   i{
     color: white;
   }
   h1{
     font-family: $font-secondary;
+    margin-bottom: 0.1rem;
+    margin-top: -1rem;
     color: white;
+
   }
+}
+.mcmuffin{
+  width: 30px;
 }

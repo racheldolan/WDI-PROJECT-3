@@ -1,8 +1,19 @@
 .login, .register{
-  padding: 100px;
+  max-width: 750px;
+  max-width: 750px;
+  margin: 30px auto;
+  background-color: $secondary;
+  border-color: white;
+  border-radius: 20px;;
+  color: white;
+  padding: 5%;
+
+  .button{
+    width: 100%;
+  }
   h1{
     font-family: $font-secondary;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
   }
   form{
     margin-top: 20px;

@@ -1,0 +1,52 @@
+.about{
+  padding: 100px;
+  h1{
+    position: relative;
+    margin-bottom: 45px;
+    font-family: $font-secondary, sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    color: $primary;
+    letter-spacing: 3px;
+  }
+}
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+  &:hover{
+    flex: 7;
+  }
+}
+
+.item-1 {
+  background-image: url('https://i.imgur.com/6oC17Ql.jpg');
+}
+
+.item-2 {
+  background-image: url('https://images.unsplash.com/photo-1492760864391-753aaae87234?auto=format&fit=crop&w=1336&q=80');
+}
+
+.item-3 {
+  background-image: url('https://files.slack.com/files-pri/T0351JZQ0-FBH542X70/image.png');
+}
+
+.item-4 {
+  background-image: url('https://images.unsplash.com/photo-1510425463958-dcced28da480?auto=format&fit=crop&w=1352&q=80');
+}
+
+.item-5 {
+  background-image: url('https://files.slack.com/files-pri/T0351JZQ0-FBG4YG2KD/rachel-5.jpg');
+}

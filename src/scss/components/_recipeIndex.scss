@@ -1,0 +1,28 @@
+// .has-bg-img {
+//   background: url('https://i.imgur.com/5f0TNVJ.jpg')center center; background-size:cover;
+//   height: 50%
+// }
+
+.search-input{
+  background-color: $primary;
+  padding: 5%;
+  margin-top: 20px;
+  border-radius: 12px;
+  width: 75%;
+}
+.ingredient{
+  background-color: $secondary;
+  width: 10%;
+  padding: 1%;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  margin: auto;
+}
+
+.bulma-card{
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+  border-radius: 20px; 
+  margin: auto;
+
+}

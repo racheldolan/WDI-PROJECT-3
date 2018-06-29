@@ -1,57 +1,63 @@
-<!-- SEARCH BAR -->
-<form ng-submit="search()">
-  <div class=section>
-    <div class="control">
-      <div class="select" >
-        <select ng-model="diet">
-          <option selected disabled>Select Diet</option>
-          <option value="">No Diet</option>
-          <option value="lactovegetarian">Lacto Vegetarian</option>
-          <option value="paleo">Paleo</option>
-          <option value="pescetarian">Pescetarian</option>
-          <option value="primal">Primal</option>
-          <option value="ovovegetarian">Ovo Vegetarian</option>
-          <option value="vegan">Vegan</option>
-          <option value="vegetarian">Vegetarian</option>
-        </select>
+<div class="search-input container">
+  <h1>Search</h1>
+  <form ng-submit="search()">
+    <div class="columns">
+      <div class="column is-one-quarter-desktop">
+          <div class="control select" >
+            <select ng-model="diet">
+              <option selected disabled>Select Diet</option>
+              <option value="">No Diet</option>
+              <option value="lactovegetarian">Lacto Vegetarian</option>
+              <option value="paleo">Paleo</option>
+              <option value="pescetarian">Pescetarian</option>
+              <option value="primal">Primal</option>
+              <option value="ovovegetarian">Ovo Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+            </select>
+          </div>
+      </div>
+      <div class="column is-three-quarters-desktop">
+        <div class="control">
+          <input ng-model="ingredient" ng-change="autoSearch()" id="ingredients" autocomplete="off" class="input has-text-centered" placeholder="» » » » » » Put your ingredients in here!« « « « « «">
+        </div>
       </div>
     </div>
-    <input ng-model="ingredient" ng-change="autoSearch()" id="ingredients" autocomplete="off" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
+    <!-- SEARCH BAR -->
 
     <ul ng-if="suggestions.length > 0">
-      <li ng-repeat="suggestion in suggestions" ng-click="setIngredient(suggestion)">
+      <li  ng-repeat="suggestion in suggestions" ng-click="setIngredient(suggestion)">
         {{ suggestion.name }}
       </li>
     </ul>
 
-    <h2 class="title">Selected ingredients</h2>
-    <div ng-if="ingredients.length > 0" ng-repeat="ingredient in ingredients">
+    <h5 class="subtitle">Selected ingredients:</h5>
+    <div class="is-grouped-multiline" ng-if="ingredients.length > 0" ng-repeat="ingredient in ingredients">
       <ul class="ingredients">
-        <li>
+        <ui class="ingredient">
           {{ ingredient }}
+          <button class="delete" ng-click="deleteIngredient(ingredient)"></button>
         </li>
       </ul>
-      <button class="delete" ng-click="deleteIngredient(ingredient)"></button>
     </div>
-
     <button class="button is-danger">Search</button>
 
-    <div class="select is-fullwidth">
+    <div class="select is-one-third-desktop">
       <select ng-model="sort">
         <option value=""></option>
         <option value="-likes">Sort by likes</option>
       </select>
+
     </div>
 
   </form>
 
   <!-- cards displaying recipes -->
-  <div class="columns is-multiline">
-    <div class="column is-one-third-desktop" ng-repeat="recipe in recipes | orderBy: sort">
-
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-one-third-desktop is-half-mobile" ng-repeat="recipe in recipes | orderBy: sort">
       <a ui-sref="recipesShow({ id: recipe.id })">
         <bulma-card image="recipe.image" title="recipe.title" subtitle="recipe.likes"></bulma-card>
       </a>
-
     </div>
   </div>
+</div>
