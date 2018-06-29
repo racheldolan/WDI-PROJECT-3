@@ -17,10 +17,11 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
     }
   });
 
-  $rootScope.$on('loggedIn', (e, data) => {
-    $scope.currentUser = data;
-  });
+  // $rootScope.$on('loggedIn', (e, data) => {
+  //   $scope.currentUser = data;
+  // });
 
+  if($auth.isAuthenticated()) $scope.currentUserId = $auth.getPayload().sub;
 
 
   $rootScope.$on('flashMessage', (e, data) => {
