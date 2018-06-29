@@ -12,7 +12,7 @@
 </head>
 <body ng-controller="MainCtrl" class="has-navbar-fixed-top">
   <main>
-    <nav class="navbar is-fixed-top is-transparent navbar-main" ng-class="{ 'change-color': navbarHome }">
+    <nav class="navbar is-fixed-top navbar-main" ng-class="{ 'change-color': navbarHome }">
       <div class="navbar-brand">
         <a class="navbar-item logo-item" ui-sref="home">
           <img class="logo" src="https://i.imgur.com/eyXRaK0.png" alt="fridge">
@@ -34,12 +34,12 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">Account</a>
             <div class="navbar-dropdown">
+              <a class="navbar-item" ui-sref="profile({ id: currentUserId })" ng-if="isAuthenticated()">Profile</a>
               <a ui-sref="login" ng-if="!isAuthenticated()"class="navbar-item">Login</a>
               <a ui-sref="register" ng-if="!isAuthenticated()" class="navbar-item">Register</a>
               <a class="navbar-item">Settings</a>
               <hr class="navbar-divider" ng-if="isAuthenticated()">
-              <div class="navbar-item" ng-if="isAuthenticated()">
-                <a ng-click="logout()">Logout</a>
+              <a class="navbar-item" ng-if="isAuthenticated()" ng-click="logout()">Logout</a>
               </div>
             </div>
           </div>
