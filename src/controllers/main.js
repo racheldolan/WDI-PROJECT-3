@@ -1,5 +1,6 @@
 function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
   $scope.isAuthenticated = $auth.isAuthenticated;
+  // $scope.currentUser = null;
   $scope.navbarOpen = false;
   $scope.navbarHome = false;
 
@@ -16,7 +17,10 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
     }
   });
 
-  if($auth.isAuthenticated()) $scope.currentUserId = $auth.getPayload().sub;
+  $rootScope.$on('loggedIn', (e, data) => {
+    $scope.currentUser = data;
+  });
+
 
 
   $rootScope.$on('flashMessage', (e, data) => {
@@ -30,6 +34,7 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
   };
   $scope.logout =function() {
     $auth.logout();
+    $scope.currentUser = null;
     $state.go('home');
   };
 }

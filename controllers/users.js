@@ -54,4 +54,5 @@ module.exports = {
   createFavourite: createFavouriteRoute,
   deleteFavourite: deleteFavouriteRoute,
   profile: profile
+
 };

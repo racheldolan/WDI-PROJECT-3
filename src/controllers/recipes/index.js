@@ -4,9 +4,9 @@ function RecipesIndexCtrl($scope, $http){
   $scope.diet = '';
   $scope.suggestions = [];
   $scope.sort = 'likes';
-  
-  $scope.search = function() {
 
+  $scope.search = function() {
+    
     $http({
       method: 'GET',
       url: '/api/recipes',

@@ -1,25 +1,56 @@
 
+//header for profile page - user info
 .hero-body {
-  background-color: #FF7D5D;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Swanky and Moo Moo', cursive;
-  font-size: 25px;
+  background-color: #57D09B;
+  font-family: 'Leckerli One', cursive;
+  font-size: 16px;
 }
 
-.div.container {
-  display: inline-block;
-  vertical-align: middle;
 
-}
+//styling for the profile pic, username and bio
 
 .hero-body .image img {
-  margin-top: 50px;
   border: solid grey 1px;
   border-radius: 50%;
   background-color: white;
+}
+.media-content {
+  text-align: center;
+  // background: red;
+}
+//style for the profile pic although not responsive
+.media-content-image {
+  padding-left: 45%;
+  // width: 130px;
+  // padding-left: 565px;
+}
 
+//sytling for the edit and delete button placement
+.media-right {
+  float: right;
+}
 
+//sytle entire fav section
+.media-recipesFav {
+  padding: 40px;
+}
+
+.media-recipesFav h2 {
+  font-size: 18px;
+  padding-bottom: 0px;
+}
+
+.media-recipesFav img {
+  position: absolute;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.title {
+  max-height: 50px;
+  min-height: 100px;
+  padding: 5px;
 
 }
