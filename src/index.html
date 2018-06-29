@@ -12,7 +12,7 @@
   <main>
     <nav class="navbar is-fixed-top is-transparent navbar-main" ng-class="{ 'change-color': navbarHome }">
       <div class="navbar-brand">
-        <a class="navbar-item" ui-sref="home">
+        <a class="navbar-item logo-item" ui-sref="home">
           <img class="logo" src="https://i.imgur.com/a8RvkMG.png" alt="fridge">
         </a>
 
@@ -25,11 +25,9 @@
 
       <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
         <div class="navbar-start">
-          <a class="navbar-item" ui-sref="home">Home</a>
-          <a class="navbar-item" ui-sref="profile({ id: currentUserId })" ng-if="isAuthenticated()">Profile</a>
           <a class="navbar-item" ui-sref="recipesIndex">Search</a>
-          <p class="navbar-title" ng-class="{ 'hidden': !navbarHome }"> What's In My Fridge? </p>
         </div>
+        <p class="navbar-title" ng-class="{ 'hidden': !navbarHome, navbarOpen }"> What's In My Fridge? </p>
         <div class="navbar-end">
           <a class="navbar-item" ui-sref="login" ng-if="!isAuthenticated()">Login</a>
           <a class="navbar-item" ui-sref="register" ng-if="!isAuthenticated()">Register</a>

@@ -1,18 +1,16 @@
 <div class="container login">
   <h1 class="title">Welcome back!</h1>
   <h7 class="subtitle is-size-7">or register your account <a ui-sref="register">here</a></h7>
-    <form ng-submit="handleSubmit()">
-      <div class="field">
-        <label class="label" for="email">Email</label>
-        <input class="input" name="email" id="email" placeholder="Email" ng-model="data.email" />
-      </div>
-      <div class="field">
-        <label class="label" for="password">Password</label>
-        <input class="input" type="password" name="password" id="password" placeholder="Password" ng-model="data.password"/>
-      </div>
+  <form ng-submit="handleSubmit()">
+    <div class="field">
+      <label class="label" for="email">Email</label>
+      <input class="input" name="email" id="email" placeholder="Email" ng-model="data.email" />
+    </div>
+    <div class="field">
+      <label class="label" for="password">Password</label>
+      <input class="input" type="password" name="password" id="password" placeholder="Password" ng-model="data.password"/>
+    </div>
 
-      <button class="button"><i class="fas fa-sign-in-alt"></i>Login</button>
-    </form>
-
-
+    <button class="button"><i class="fas fa-sign-in-alt"></i>Login</button>
+  </form>
 </div>
