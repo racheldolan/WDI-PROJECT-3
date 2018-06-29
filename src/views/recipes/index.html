@@ -1,6 +1,6 @@
 <div class="search-input container">
   <h1>Search</h1>
-  <form ng-submit="search()">
+  <form class="search-form" ng-submit="search()">
     <div class="columns">
       <div class="column is-one-quarter-desktop">
           <div class="control select" >
@@ -54,7 +54,7 @@
 
   <!-- cards displaying recipes -->
   <div class="columns is-multiline is-mobile">
-    <div class="column is-one-third-desktop is-half-mobile" ng-repeat="recipe in recipes | orderBy: sort">
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile" ng-repeat="recipe in recipes | orderBy: sort">
       <a ui-sref="recipesShow({ id: recipe.id })">
         <bulma-card image="recipe.image" title="recipe.title" subtitle="recipe.likes"></bulma-card>
       </a>
