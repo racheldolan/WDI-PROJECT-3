@@ -26,7 +26,7 @@ import UsersEditCtrl from './controllers/users/edit';
 //user Controllers Show & Edit
 
 import bulmaCard from './directives/bulmaCard';
-import filepicker from './directives/filepicker';
+import filePicker from './directives/filePicker';
 
 
 angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitize','angular-filepicker'])
@@ -41,4 +41,4 @@ angular.module('fridgeAPI', ['ui.router', 'satellizer', 'ngMessages', 'ngSanitiz
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl)
   .directive('bulmaCard', bulmaCard)
-  .directive('filepicker', filepicker);
+  .directive('filePicker', filePicker);

@@ -1,4 +1,4 @@
-function filepicker(filepickerService) {
+function filePicker(filepickerService) {
   return {
     restrict: 'A',
     require: 'ngModel',
@@ -19,4 +19,4 @@ function filepicker(filepickerService) {
   };
 }
 
-export default filepicker;
+export default filePicker;
