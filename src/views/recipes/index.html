@@ -19,7 +19,7 @@
       </div>
       <div class="column is-three-quarters-desktop">
         <div class="control">
-          <input ng-model="ingredient" ng-change="autoSearch()" id="ingredients" autocomplete="off" class="input has-text-centered" placeholder="» » » » » » Search« « « « « «">
+          <input ng-model="ingredient" ng-change="autoSearch()" id="ingredients" autocomplete="off" class="input has-text-centered" placeholder="» » » » » » Put your ingredients in here!« « « « « «">
         </div>
       </div>
     </div>
@@ -47,17 +47,19 @@
         <option value=""></option>
         <option value="-likes">Sort by likes</option>
       </select>
+
     </div>
 
   </form>
 
-</div>
-
-<!-- cards displaying recipes -->
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-mobile" ng-repeat="recipe in recipes | orderBy: sort">
-    <a ui-sref="recipesShow({ id: recipe.id })">
-      <bulma-card image="recipe.image" title="recipe.title" subtitle="recipe.likes"></bulma-card>
-    </a>
+  <div class="columns is-multiline is-mobile">
+    <div class="column is-one-third-desktop is-half-mobile" ng-repeat="recipe in recipes | orderBy: sort">
+      <a ui-sref="recipesShow({ id: recipe.id })">
+        <bulma-card image="recipe.image" title="recipe.title" subtitle="recipe.likes"></bulma-card>
+      </a>
+    </div>
   </div>
 </div>
+
+
+<!-- cards displaying recipes -->

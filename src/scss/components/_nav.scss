@@ -1,11 +1,11 @@
 a.navbar-item:hover, .navbar-link:hover {
-  background-color: #57D09B;
-  color: white;
+  background: $secondary;
+  color: $secondary;
   text-decoration: none;
 
 }
 a.navbar-item, .navbar-link {
-  color: $tertiary;
+  color: $primary;
 }
 
 .is-transparent {
@@ -13,12 +13,6 @@ background-color: transparent;
 background-image: none;
 }
 
-
-.navbar-title {
-  margin-top: 10px;
-  margin-left: 230px;
-  color: $tertiary;
-}
 
 nav {
   font-family: $font-secondary;
@@ -29,5 +23,5 @@ nav {
 }
 
 .change-color {
-  background-color: $primary;
+  background-color: white;
 }
