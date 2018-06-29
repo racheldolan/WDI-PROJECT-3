@@ -17,4 +17,4 @@
 
  For the build process we used the spoonacular API also known as market mashape. Using this API allowed us to search by ingredients and list all the relevant recipes. We included the API which enables us to filter by the diet requirement and implemented an autocomplete functionality.
 
- We created an app which includes the REStful routes allowing the user to be able to register and login in with authentication. The user can log on to their profile page, create and delete comments/ratings and favourite and unfavourite recipes.
+ We created an app which includes the REStful routes allowing the user to be able to register and login in with authentication. The user can log on and update their profile page, create and delete comments/ratings and favourite and unfavourite recipes.
