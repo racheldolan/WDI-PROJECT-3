@@ -33,7 +33,7 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">Account</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item" ui-sref="profile({ id: currentUserId })" ng-if="isAuthenticated()">Profile</a>
+              <a class="navbar-item" ui-sref="profile({ id: currentUser._id })" ng-if="isAuthenticated()">Profile</a>
               <a ui-sref="login" ng-if="!isAuthenticated()"class="navbar-item">Login</a>
               <a ui-sref="register" ng-if="!isAuthenticated()" class="navbar-item">Register</a>
               <a class="navbar-item">Settings</a>
