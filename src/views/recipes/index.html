@@ -31,9 +31,9 @@
       </li>
     </ul>
 
-    <h5 class="subtitle">Selected ingredients</h5>
+    <h5 class="subtitle">Selected ingredients:</h5>
     <div class="is-grouped-multiline" ng-if="ingredients.length > 0" ng-repeat="ingredient in ingredients">
-      <ol class="ingredients">
+      <ul class="ingredients">
         <ui class="ingredient">
           {{ ingredient }}
           <button class="delete" ng-click="deleteIngredient(ingredient)"></button>
@@ -52,6 +52,7 @@
 
   </form>
 
+  <!-- cards displaying recipes -->
   <div class="columns is-multiline is-mobile">
     <div class="column is-one-third-desktop is-half-mobile" ng-repeat="recipe in recipes | orderBy: sort">
       <a ui-sref="recipesShow({ id: recipe.id })">
@@ -60,6 +61,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- cards displaying recipes -->

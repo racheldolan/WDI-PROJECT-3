@@ -15,9 +15,8 @@
     <nav class="navbar is-fixed-top is-transparent navbar-main" ng-class="{ 'change-color': navbarHome }">
       <div class="navbar-brand">
         <a class="navbar-item logo-item" ui-sref="home">
-          <img class="logo" src="https://i.imgur.com/a8RvkMG.png" alt="fridge">
+          <img class="logo" src="https://i.imgur.com/eyXRaK0.png" alt="fridge">
         </a>
-
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" ng-class="{ 'is-active': navbarOpen }" ng-click="toggleMenu()">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -27,14 +26,15 @@
 
       <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
         <div class="navbar-start">
-          <a class="navbar-item" ui-sref="recipesIndex">Search  <i class="fas fa-search"></i></a>
+          <a class="navbar-item" ui-sref="recipesIndex">Search</a>
+          <a class="navbar-item" ui-sref="recipesIndex"><i class="fas fa-search"></i></a>
         </div>
         <div class="navbar-end">
           <a class="navbar-item" ui-sref="about">McMuffin</a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">Account</a>
             <div class="navbar-dropdown">
-              <a ui-sref="login" class="navbar-item">Login</a>
+              <a ui-sref="login" ng-if="!isAuthenticated()"class="navbar-item">Login</a>
               <a ui-sref="register" ng-if="!isAuthenticated()" class="navbar-item">Register</a>
               <a class="navbar-item">Settings</a>
               <hr class="navbar-divider" ng-if="isAuthenticated()">
