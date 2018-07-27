@@ -27,18 +27,16 @@
       </div>
       <div class="navbar-menu" ng-class="{ 'is-active': navbarOpen }">
         <div class="navbar-start">
-          <a class="navbar-item" ui-sref="about">McMuffin</a>
-        </div>
-        <div class="navbar-end">
           <a class="navbar-item" ui-sref="recipesIndex">Search</a>
           <a class="navbar-item" ui-sref="recipesIndex"><i class="fas fa-search"></i></a>
+        </div>
+        <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">Account</a>
             <div class="navbar-dropdown">
               <a class="navbar-item" ui-sref="profile({ id: currentUser._id })" ng-if="isAuthenticated()">Profile</a>
               <a ui-sref="login" ng-if="!isAuthenticated()"class="navbar-item">Login</a>
               <a ui-sref="register" ng-if="!isAuthenticated()" class="navbar-item">Register</a>
-              <a class="navbar-item">Settings</a>
               <hr class="navbar-divider" ng-if="isAuthenticated()">
               <a class="navbar-item" ng-if="isAuthenticated()" ng-click="logout()">Logout</a>
               </div>
