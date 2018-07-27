@@ -1,33 +1,20 @@
-// home page animation start
 .homepage{
-  background-color: $quinary
+  background-color: $quinary;
+  .image-gallery {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    li{
+      position: absolute;
+    }
+    img{
+      width: 1600px;
+      height: 700px;
+    }
+  }
 }
-.image-gallery {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-
-}
-.list-item-in-gallery {
-  position: absolute;
-}
-.image-in-gallery{
-  width: 1600px;
-  height: 700px;
-}
-.logo {
-  height:80px;
-  border-radius: 50%;
-  margin: 0;
-}
-  .logo:hover {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
+//
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -44,15 +31,6 @@
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
-}
-
-.main-title {
-  font-size: 50px;
-  color: $quinary;
-  z-index: 2;
-  padding-top: 40%;
-  font-family: $font-secondary;
-  margin-left: 10%;
 }
 
 #one {
@@ -102,76 +80,4 @@ animation: xfade 16s 12s infinite;
   font-size: 4rem;
   font-family: $font-secondary;
   }
-}
-
-
-ul, nav{
-  list-style: none;
-  padding: 0;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-a:hover {
-  opacity: 1;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 1.5rem;
-}
-
-i {
-  font-size: 1.3rem;
-}
-
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  padding: 10px 100px 0;
-}
-
-header nav ul {
-  display: flex;
-}
-
-header nav li{
-  margin: 0 15px;
-}
-
-header nav li:first-child{
-  margin-left: 0;
-}
-
-header nav li:last-child{
-  margin-right: 0;
-}
-
-a.btn {
-  color: #fff;
-  padding: 10px;
-  border: 1px solid rgba(255,255,255,0.5);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-a.btn:hover {
-  background: #d73851;
-  border: 1px solid #d73851;
-  color: #fff;
 }
