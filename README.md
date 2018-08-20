@@ -34,6 +34,8 @@
 
 The idea is that users can search on the app for recipes based on the ingredients they already have at home, for convenience and to cut down on wastage.
 
+Visit site: https://in-my-fridge.herokuapp.com/
+
 <p align="center"><img src='src/assets/images/project-3-home.gif'></p>
 
 ###### Landing page
