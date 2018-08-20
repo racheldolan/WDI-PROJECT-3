@@ -7,9 +7,6 @@
  - Natasha Ramburrun
  - Rachel Dolan
 
-
- What's in your fridge application has been designed and developed by Linda Le, Rachel Dolan and Natasha Ramburrun.
-
 ---
 
  ### Project Brief
@@ -42,7 +39,6 @@ Visit site: https://in-my-fridge.herokuapp.com/
 
 ---
 
-
 ### Technologies:
 
 For this project we used the following technologies:
@@ -52,6 +48,7 @@ For this project we used the following technologies:
 * Bulma
 * JavaScript
 * AngularJS
+* Spoonacular API
 * Node.js
 * Express
 * Mongoose
