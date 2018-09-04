@@ -5,7 +5,7 @@
 
  - Linda Lê
  - Natasha Ramburrun
- - Rachel Dolan
+ - Rachel Dolan - Project Manager
 
 ---
 

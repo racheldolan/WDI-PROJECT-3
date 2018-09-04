@@ -16,13 +16,11 @@
       <label class="label" for="email">Email</label>
       <input class="input" type="email" name="email" id="email" placeholder="Email" ng-model="data.email" required pattern=".+@.+\..+" />
 
-
       <div ng-messages="form.email.$error" ng-if="form.email.$dirty">
         <small ng-message="required">This field is required</small>
         <small ng-message="email">Please enter a valid email</small>
       </div>
     </div>
-
 
     <div class="field">
       <label class="label" for="password">Password</label>

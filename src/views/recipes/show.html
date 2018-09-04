@@ -10,6 +10,7 @@
       </div>
     </div>
 
+    <!-- MAIN RECIPE INFO -->
     <div class="column is-half-desktop is-half-mobile recipe-info">
       <div class="card-content">
         <div class="media">
@@ -35,8 +36,9 @@
           </div>
         </div>
       </div>
+      <!-- MAIN RECIPE INFO END -->
 
-
+      <!-- RECIPE INSTRUCTIONS -->
     <div class="columns">
       <div class="column is-half-desktop is-mobile recipe-instructions">
         <div class="media-content">
@@ -45,16 +47,16 @@
           <p class="subtitle is-6 instructions" ng-bind-html="recipe.instructions"></p>
         </div>
       </div>
+      <!-- RECIPE INSTRUCTIONS END -->
 
-
+      <!-- COMMENTS -->
       <div class="column is-half-desktop is-mobile recipe-comments">
         <h4 class="title is-4">Comments</h4>
         <article class="media" ng-repeat="comment in recipe.comments">
           <figure class="media-left">
-            <p class="image is-64x64">
+            <div class="image is-64x64">
               <img src="{{ comment.author.image }}" alt="{{ comment.author.username }}">
-
-            </p>
+            </div>
           </figure>
           <div class="media-content">
             <div class="content">
@@ -94,6 +96,8 @@
 
         </form>
       </div>
+      <!-- COMMENTS END -->
+
     </div>
   </div>
 

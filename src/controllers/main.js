@@ -23,13 +23,15 @@ function MainCtrl($scope, $auth, $state, $rootScope, $timeout, $transitions){
 
   $rootScope.$on('flashMessage', (e, data) => {
     $scope.flashMessage = data;
-
     $timeout(() => $scope.flashMessage = null, 4000);
   });
 
+  // TOGGLES NAVBAR OPEN/CLOSE
   $scope.toggleMenu = function() {
     $scope.navbarOpen = !$scope.navbarOpen;
   };
+
+  // LOGOUT FUNCTION
   $scope.logout =function() {
     $auth.logout();
     $scope.currentUser = null;

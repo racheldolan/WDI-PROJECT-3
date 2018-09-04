@@ -25,12 +25,9 @@ function login(req, res, next) {
         token,
         message: `Welcome back, ${user.username}!`
       });
-
     })
-
     .catch(next);
 }
-
 
 module.exports = {
   register,

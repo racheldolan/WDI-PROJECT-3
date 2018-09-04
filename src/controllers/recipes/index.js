@@ -6,7 +6,7 @@ function RecipesIndexCtrl($scope, $http){
   $scope.sort = 'likes';
 
   $scope.search = function() {
-    
+
     $http({
       method: 'GET',
       url: '/api/recipes',

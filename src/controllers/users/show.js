@@ -7,7 +7,8 @@ function UsersShowCtrl($scope, $http, $state,$auth){
       $scope.user = res.data;
 
     });
-    
+
+  // DELETES USER AND LOGS OUT
   $scope.deleteUser = function() {
     $http({
       method: 'DELETE',
@@ -15,11 +16,11 @@ function UsersShowCtrl($scope, $http, $state,$auth){
     })
       .then(() => {
         $auth.logout();
-        // localStorage.removeItem('currentUser');
         $state.go('home');
       });
   };
 
+  // DELETE FAVOURITE RECIPE
   $scope.deleteFavourite = function(favourite) {
     const index = $scope.user.favourites.indexOf(favourite);
     $scope.user.favourites.splice(index, 1);
@@ -32,7 +33,7 @@ function UsersShowCtrl($scope, $http, $state,$auth){
       });
   };
 
-
+  // TOGGLES MODAL
   $scope.toggleModal = function(){
     $scope.modalOpen = !$scope.modalOpen;
   };

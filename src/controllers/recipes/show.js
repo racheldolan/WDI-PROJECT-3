@@ -49,6 +49,7 @@ function RecipesShowCtrl($scope, $http, $state, $auth, $rootScope){
       });
   };
 
+  // CHECKS TO SEE IF THE CURRENT USER IS THE COMMENT AUTHOR
   $scope.isCommentOwner = function(comment) {
     if(comment.author._id === $auth.getPayload().sub) return true;
     return false;
